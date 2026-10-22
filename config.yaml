@@ -1,0 +1,44 @@
+# All experiment settings for the study. Every number in the paper is produced from this file.
+seed: 42
+data:
+  files: [data/datatraining.txt, data/datatest.txt, data/datatest2.txt]
+  co2_threshold_ppm: 1000        # ICOP-IAQ 2010 ceiling limit (DOSH, 2010); Poor IAQ if CO2 > threshold
+  base_features: [Temperature, Humidity, Light]   # CO2 is never used as an input
+  delta_window_min: 15           # window for rate-of-change features (ablation only)
+  baseline_window: 24h           # baseline-corrected features: value minus its past-24-h minimum (ablation only)
+protocols:
+  random:        {test_size: 0.30, inner_cv: stratified_kfold, inner_folds: 5}
+  leave_one_day_out: {group: calendar_day, inner_cv: group_kfold, inner_folds: 3}
+  chronological: {train_end: "2015-02-10 23:59", test_start: "2015-02-11 00:00", inner_cv: group_kfold, inner_folds: 3}
+tuning_metric: f1               # F1-score of the Poor-IAQ (positive) class
+bootstrap: {unit: calendar_day, n_resamples: 2000, ci: 0.95}
+models:
+  LR:   {estimator: LogisticRegression, fixed: {max_iter: 2000}, grid: {C: [0.01, 0.1, 1, 10], class_weight: [null, balanced]}}
+  LDA:  {estimator: LinearDiscriminantAnalysis, fixed: {}, grid: {}}
+  NB:   {estimator: GaussianNB, fixed: {}, grid: {}}
+  KNN:  {estimator: KNeighborsClassifier, fixed: {}, grid: {n_neighbors: [5, 11, 21, 51], weights: [uniform, distance]}}
+  DT:   {estimator: DecisionTreeClassifier, fixed: {}, grid: {max_depth: [3, 5, 8, null], min_samples_leaf: [1, 20, 100]}}
+  RF:   {estimator: RandomForestClassifier, fixed: {n_estimators: 300, n_jobs: 2}, grid: {max_depth: [5, 10, null], min_samples_leaf: [1, 20]}}
+  ET:   {estimator: ExtraTreesClassifier, fixed: {n_estimators: 300, n_jobs: 2}, grid: {max_depth: [5, 10, null], min_samples_leaf: [1, 20]}}
+  AdaBoost: {estimator: AdaBoostClassifier, fixed: {}, grid: {n_estimators: [50, 200], learning_rate: [0.1, 1.0]}}
+  GB:   {estimator: GradientBoostingClassifier, fixed: {n_estimators: 100, learning_rate: 0.1}, grid: {max_depth: [2, 3]}}
+  HGB:  {estimator: HistGradientBoostingClassifier, fixed: {max_iter: 200}, grid: {learning_rate: [0.05, 0.1], max_depth: [3, null]}}
+  SVM:  {estimator: SVC, fixed: {}, grid: {kernel: [linear, rbf], C: [0.1, 1, 10]}}
+  MLP:  {estimator: MLPClassifier, fixed: {max_iter: 1000, early_stopping: true, learning_rate_init: 0.001}, grid: {hidden_layer_sizes: [[10], [20, 10]], alpha: [0.0001, 0.01]}}
+ablation:
+  models: auto_top3            # three best models by leave-one-day-out F1
+  hyperparameters: modal_selected  # most frequently selected setting across the 17 leave-one-day-out folds (no re-tuning)
+  feature_sets:
+    All (T+RH+L): [Temperature, Humidity, Light]
+    w/o Temperature: [Humidity, Light]
+    w/o Humidity: [Temperature, Light]
+    w/o Light: [Temperature, Humidity]
+    Temperature only: [Temperature]
+    Humidity only: [Humidity]
+    Light only: [Light]
+    + Humidity ratio: [Temperature, Humidity, Light, HumidityRatio]
+    + Rate of change: [Temperature, Humidity, Light, dTemperature, dHumidity, dLight]
+    + Time of day: [Temperature, Humidity, Light, hour_sin, hour_cos]
+    Baseline-corrected T, RH + L: [bTemperature, bHumidity, Light]
+    Baseline-corrected + rate of change: [bTemperature, bHumidity, Light, dTemperature, dHumidity, dLight]
+  thresholds_ppm: [800, 1000, 1200]

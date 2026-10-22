@@ -1,0 +1,1005 @@
+{
+ "leave_one_day_out/LR": [
+  {
+   "test_day": "2015-02-02",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-03",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-04",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-05",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-06",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-07",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-08",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-09",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-10",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-11",
+   "C": 10,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-12",
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-13",
+   "C": 0.01,
+   "class_weight": null
+  },
+  {
+   "test_day": "2015-02-14",
+   "C": 0.1,
+   "class_weight": null
+  },
+  {
+   "test_day": "2015-02-15",
+   "C": 0.01,
+   "class_weight": null
+  },
+  {
+   "test_day": "2015-02-16",
+   "C": 10,
+   "class_weight": null
+  },
+  {
+   "test_day": "2015-02-17",
+   "C": 10,
+   "class_weight": "balanced"
+  },
+  {
+   "test_day": "2015-02-18",
+   "C": 0.01,
+   "class_weight": "balanced"
+  }
+ ],
+ "leave_one_day_out/LDA": [
+  {
+   "test_day": "2015-02-02"
+  },
+  {
+   "test_day": "2015-02-03"
+  },
+  {
+   "test_day": "2015-02-04"
+  },
+  {
+   "test_day": "2015-02-05"
+  },
+  {
+   "test_day": "2015-02-06"
+  },
+  {
+   "test_day": "2015-02-07"
+  },
+  {
+   "test_day": "2015-02-08"
+  },
+  {
+   "test_day": "2015-02-09"
+  },
+  {
+   "test_day": "2015-02-10"
+  },
+  {
+   "test_day": "2015-02-11"
+  },
+  {
+   "test_day": "2015-02-12"
+  },
+  {
+   "test_day": "2015-02-13"
+  },
+  {
+   "test_day": "2015-02-14"
+  },
+  {
+   "test_day": "2015-02-15"
+  },
+  {
+   "test_day": "2015-02-16"
+  },
+  {
+   "test_day": "2015-02-17"
+  },
+  {
+   "test_day": "2015-02-18"
+  }
+ ],
+ "leave_one_day_out/NB": [
+  {
+   "test_day": "2015-02-02"
+  },
+  {
+   "test_day": "2015-02-03"
+  },
+  {
+   "test_day": "2015-02-04"
+  },
+  {
+   "test_day": "2015-02-05"
+  },
+  {
+   "test_day": "2015-02-06"
+  },
+  {
+   "test_day": "2015-02-07"
+  },
+  {
+   "test_day": "2015-02-08"
+  },
+  {
+   "test_day": "2015-02-09"
+  },
+  {
+   "test_day": "2015-02-10"
+  },
+  {
+   "test_day": "2015-02-11"
+  },
+  {
+   "test_day": "2015-02-12"
+  },
+  {
+   "test_day": "2015-02-13"
+  },
+  {
+   "test_day": "2015-02-14"
+  },
+  {
+   "test_day": "2015-02-15"
+  },
+  {
+   "test_day": "2015-02-16"
+  },
+  {
+   "test_day": "2015-02-17"
+  },
+  {
+   "test_day": "2015-02-18"
+  }
+ ],
+ "leave_one_day_out/KNN": [
+  {
+   "test_day": "2015-02-02",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-03",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-04",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-05",
+   "n_neighbors": 51,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-06",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-07",
+   "n_neighbors": 51,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-08",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-09",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-10",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-11",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-12",
+   "n_neighbors": 5,
+   "weights": "uniform"
+  },
+  {
+   "test_day": "2015-02-13",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-14",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-15",
+   "n_neighbors": 5,
+   "weights": "uniform"
+  },
+  {
+   "test_day": "2015-02-16",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-17",
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "test_day": "2015-02-18",
+   "n_neighbors": 5,
+   "weights": "distance"
+  }
+ ],
+ "leave_one_day_out/DT": [
+  {
+   "test_day": "2015-02-02",
+   "max_depth": 5,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-03",
+   "max_depth": 8,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-04",
+   "max_depth": 5,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-05",
+   "max_depth": 5,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-06",
+   "max_depth": 5,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-07",
+   "max_depth": 5,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-08",
+   "max_depth": 5,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-09",
+   "max_depth": 5,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-10",
+   "max_depth": 5,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-11",
+   "max_depth": 5,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-12",
+   "max_depth": null,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-13",
+   "max_depth": 5,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-14",
+   "max_depth": 5,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-15",
+   "max_depth": 3,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-16",
+   "max_depth": 3,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-17",
+   "max_depth": 8,
+   "min_samples_leaf": 100
+  },
+  {
+   "test_day": "2015-02-18",
+   "max_depth": 8,
+   "min_samples_leaf": 100
+  }
+ ],
+ "leave_one_day_out/RF": [
+  {
+   "test_day": "2015-02-02",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-03",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-04",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-05",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-06",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-07",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-08",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-09",
+   "max_depth": 5,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-10",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-11",
+   "max_depth": 10,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-12",
+   "max_depth": null,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-13",
+   "max_depth": null,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-14",
+   "max_depth": 5,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-15",
+   "max_depth": 10,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-16",
+   "max_depth": 10,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-17",
+   "max_depth": 5,
+   "min_samples_leaf": 20
+  },
+  {
+   "test_day": "2015-02-18",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  }
+ ],
+ "leave_one_day_out/ET": [
+  {
+   "test_day": "2015-02-02",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-03",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-04",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-05",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-06",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-07",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-08",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-09",
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-10",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-11",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-12",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-13",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-14",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-15",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-16",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-17",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "test_day": "2015-02-18",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "leave_one_day_out/AdaBoost": [
+  {
+   "test_day": "2015-02-02",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-03",
+   "learning_rate": 0.1,
+   "n_estimators": 200
+  },
+  {
+   "test_day": "2015-02-04",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-05",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-06",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-07",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-08",
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  },
+  {
+   "test_day": "2015-02-09",
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  },
+  {
+   "test_day": "2015-02-10",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-11",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-12",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-13",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-14",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-15",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-16",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-17",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  },
+  {
+   "test_day": "2015-02-18",
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  }
+ ],
+ "leave_one_day_out/GB": [
+  {
+   "test_day": "2015-02-02",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-03",
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-04",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-05",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-06",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-07",
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-08",
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-09",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-10",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-11",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-12",
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-13",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-14",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-15",
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-16",
+   "max_depth": 2
+  },
+  {
+   "test_day": "2015-02-17",
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-18",
+   "max_depth": 2
+  }
+ ],
+ "leave_one_day_out/HGB": [
+  {
+   "test_day": "2015-02-02",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-03",
+   "learning_rate": 0.05,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-04",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-05",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-06",
+   "learning_rate": 0.05,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-07",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-08",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-09",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-10",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-11",
+   "learning_rate": 0.05,
+   "max_depth": null
+  },
+  {
+   "test_day": "2015-02-12",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-13",
+   "learning_rate": 0.05,
+   "max_depth": null
+  },
+  {
+   "test_day": "2015-02-14",
+   "learning_rate": 0.1,
+   "max_depth": 3
+  },
+  {
+   "test_day": "2015-02-15",
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "test_day": "2015-02-16",
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "test_day": "2015-02-17",
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "test_day": "2015-02-18",
+   "learning_rate": 0.05,
+   "max_depth": 3
+  }
+ ],
+ "leave_one_day_out/SVM": [
+  {
+   "test_day": "2015-02-02",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-03",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-04",
+   "C": 1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-05",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-06",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-07",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-08",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-09",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-10",
+   "C": 1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-11",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-12",
+   "C": 0.1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-13",
+   "C": 0.1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-14",
+   "C": 1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-15",
+   "C": 1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-16",
+   "C": 1,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-17",
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "test_day": "2015-02-18",
+   "C": 1,
+   "kernel": "rbf"
+  }
+ ],
+ "leave_one_day_out/MLP": [
+  {
+   "test_day": "2015-02-02",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-03",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-04",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-05",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-06",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-07",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-08",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-09",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-10",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-11",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-12",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-13",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-14",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-15",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-16",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-17",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "test_day": "2015-02-18",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ]
+  }
+ ]
+}

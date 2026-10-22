@@ -1,0 +1,13 @@
+{
+ "LR": {
+  "C": 0.01,
+  "class_weight": "balanced"
+ },
+ "SVM": {
+  "C": 10,
+  "kernel": "rbf"
+ },
+ "GB": {
+  "max_depth": 2
+ }
+}

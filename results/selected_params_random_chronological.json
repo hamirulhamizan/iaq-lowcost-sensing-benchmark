@@ -1,0 +1,138 @@
+{
+ "random/LR": [
+  {
+   "C": 0.01,
+   "class_weight": "balanced"
+  }
+ ],
+ "random/LDA": [
+  {}
+ ],
+ "random/NB": [
+  {}
+ ],
+ "random/KNN": [
+  {
+   "n_neighbors": 11,
+   "weights": "distance"
+  }
+ ],
+ "random/DT": [
+  {
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "random/RF": [
+  {
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "random/ET": [
+  {
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "random/AdaBoost": [
+  {
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  }
+ ],
+ "random/GB": [
+  {
+   "max_depth": 3
+  }
+ ],
+ "random/HGB": [
+  {
+   "learning_rate": 0.1,
+   "max_depth": null
+  }
+ ],
+ "random/SVM": [
+  {
+   "C": 10,
+   "kernel": "rbf"
+  }
+ ],
+ "random/MLP": [
+  {
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  }
+ ],
+ "chronological/LR": [
+  {
+   "C": 1,
+   "class_weight": "balanced"
+  }
+ ],
+ "chronological/LDA": [
+  {}
+ ],
+ "chronological/NB": [
+  {}
+ ],
+ "chronological/KNN": [
+  {
+   "n_neighbors": 11,
+   "weights": "distance"
+  }
+ ],
+ "chronological/DT": [
+  {
+   "max_depth": 3,
+   "min_samples_leaf": 1
+  }
+ ],
+ "chronological/RF": [
+  {
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "chronological/ET": [
+  {
+   "max_depth": 10,
+   "min_samples_leaf": 1
+  }
+ ],
+ "chronological/AdaBoost": [
+  {
+   "learning_rate": 1.0,
+   "n_estimators": 50
+  }
+ ],
+ "chronological/GB": [
+  {
+   "max_depth": 2
+  }
+ ],
+ "chronological/HGB": [
+  {
+   "learning_rate": 0.05,
+   "max_depth": null
+  }
+ ],
+ "chronological/SVM": [
+  {
+   "C": 1,
+   "kernel": "linear"
+  }
+ ],
+ "chronological/MLP": [
+  {
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  }
+ ]
+}
