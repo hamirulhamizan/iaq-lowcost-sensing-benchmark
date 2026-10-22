@@ -1,0 +1,14 @@
+{
+  "title": "Leakage-aware classification of CO2-based indoor air quality from low-cost office sensors: code, configuration and results",
+  "upload_type": "software",
+  "description": "Code, configuration file (config.yaml), data and results for the article 'Leakage-Aware Classification of CO2-Based Indoor Air Quality from Low-Cost Office Sensors: A Day-Wise Validated Comparison of Twelve Machine Learning Models' (Journal of Soft Computing and Data Mining). Twelve classifiers are evaluated under random, leave-one-day-out and chronological validation on the Occupancy Detection dataset (Candanedo & Feldheim, 2016; CC BY 4.0).",
+  "creators": [
+    {"name": "[Surname], [Given name]", "affiliation": "[Institution, Malaysia]", "orcid": "[0000-0000-0000-0000]"}
+  ],
+  "license": "MIT",
+  "keywords": ["indoor air quality", "CO2", "low-cost sensors", "machine learning", "data leakage", "cross-validation"],
+  "related_identifiers": [
+    {"identifier": "10.24432/C5X01N", "relation": "isDerivedFrom", "scheme": "doi"},
+    {"identifier": "10.1016/j.enbuild.2015.11.071", "relation": "references", "scheme": "doi"}
+  ]
+}

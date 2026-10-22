@@ -1,7 +1,8 @@
 # Data
 
 `datatraining.txt`, `datatest.txt` and `datatest2.txt` are the Occupancy Detection dataset of
-Candanedo & Feldheim (2016), redistributed unchanged under its CC BY 4.0 licence.
+Candanedo & Feldheim (2016), redistributed unchanged (no modifications) under its Creative Commons Attribution 4.0 International licence
+(CC BY 4.0, https://creativecommons.org/licenses/by/4.0/). All credit for the data belongs to the original authors.
 
 * Source: UCI Machine Learning Repository, https://doi.org/10.24432/C5X01N
   (mirror: https://github.com/LuisM78/Occupancy-detection-data)
