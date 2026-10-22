@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reproduce every result and figure in the paper. Total run time ~2 h on a 2-core CPU.
+# Reproduce every result and figure in the paper. Total run time under 1 h on a 2-core CPU.
 set -euo pipefail
 cd "$(dirname "$0")"
 export PYTHONPATH=src PYTHONWARNINGS=ignore

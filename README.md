@@ -24,7 +24,7 @@ and how much the reported performance depends on the validation protocol.
 
 ```bash
 pip install -r requirements.txt     # Python 3.13; exact versions pinned
-./run_all.sh                        # about 2 h on a 2-core CPU
+./run_all.sh                        # under 1 h on a 2-core CPU
 ```
 
 All randomness is controlled by `seed: 42` in `config.yaml`. Standardisation and hyperparameter
