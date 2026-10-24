@@ -1,0 +1,370 @@
+{
+ "leave_sites_out/LR": [
+  {
+   "fold": 0,
+   "C": 10,
+   "threshold": 0.031232952494972023
+  },
+  {
+   "fold": 1,
+   "C": 0.01,
+   "threshold": 0.12168271109330979
+  },
+  {
+   "fold": 2,
+   "C": 10,
+   "threshold": 0.14091837956904912
+  },
+  {
+   "fold": 3,
+   "C": 0.01,
+   "threshold": 0.0452970269408271
+  },
+  {
+   "fold": 4,
+   "C": 10,
+   "threshold": 0.028158782602987313
+  }
+ ],
+ "leave_sites_out/LDA": [
+  {
+   "fold": 0,
+   "threshold": 0.031512645900453246
+  },
+  {
+   "fold": 1,
+   "threshold": 0.11961655681160517
+  },
+  {
+   "fold": 2,
+   "threshold": 0.12934952466021193
+  },
+  {
+   "fold": 3,
+   "threshold": 0.08435066296688641
+  },
+  {
+   "fold": 4,
+   "threshold": 0.030189915824752882
+  }
+ ],
+ "leave_sites_out/NB": [
+  {
+   "fold": 0,
+   "threshold": 0.000870733056260623
+  },
+  {
+   "fold": 1,
+   "threshold": 0.1662569539934201
+  },
+  {
+   "fold": 2,
+   "threshold": 0.16375986085348757
+  },
+  {
+   "fold": 3,
+   "threshold": 0.06411277636352464
+  },
+  {
+   "fold": 4,
+   "threshold": 0.029704511567131203
+  }
+ ],
+ "leave_sites_out/KNN": [
+  {
+   "fold": 0,
+   "n_neighbors": 21,
+   "weights": "distance",
+   "threshold": 0.0
+  },
+  {
+   "fold": 1,
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.0978326421881856
+  },
+  {
+   "fold": 2,
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.09803921568627451
+  },
+  {
+   "fold": 3,
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.08164562543564183
+  },
+  {
+   "fold": 4,
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.046941184214132736
+  }
+ ],
+ "leave_sites_out/DT": [
+  {
+   "fold": 0,
+   "max_depth": 8,
+   "min_samples_leaf": 20,
+   "threshold": 0.0
+  },
+  {
+   "fold": 1,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.08149779735682819
+  },
+  {
+   "fold": 2,
+   "max_depth": 8,
+   "min_samples_leaf": 100,
+   "threshold": 0.06172839506172839
+  },
+  {
+   "fold": 3,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.02871410736579276
+  },
+  {
+   "fold": 4,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.025682182985553772
+  }
+ ],
+ "leave_sites_out/RF": [
+  {
+   "fold": 0,
+   "max_depth": 20,
+   "min_samples_leaf": 5,
+   "threshold": 0.0
+  },
+  {
+   "fold": 1,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.07896567669060342
+  },
+  {
+   "fold": 2,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.08580212649342937
+  },
+  {
+   "fold": 3,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.08797054856029052
+  },
+  {
+   "fold": 4,
+   "max_depth": 10,
+   "min_samples_leaf": 5,
+   "threshold": 0.033037980096736495
+  }
+ ],
+ "leave_sites_out/ET": [
+  {
+   "fold": 0,
+   "max_depth": 20,
+   "min_samples_leaf": 5,
+   "threshold": 0.012070723222803665
+  },
+  {
+   "fold": 1,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.08381255248160223
+  },
+  {
+   "fold": 2,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.0756761296077822
+  },
+  {
+   "fold": 3,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.07437898165094206
+  },
+  {
+   "fold": 4,
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.0266017826237304
+  }
+ ],
+ "leave_sites_out/AdaBoost": [
+  {
+   "fold": 0,
+   "learning_rate": 1.0,
+   "n_estimators": 200,
+   "threshold": 0.34954734038720675
+  },
+  {
+   "fold": 1,
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.31263913491068673
+  },
+  {
+   "fold": 2,
+   "learning_rate": 0.1,
+   "n_estimators": 50,
+   "threshold": 0.156187896356064
+  },
+  {
+   "fold": 3,
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.2828713503308439
+  },
+  {
+   "fold": 4,
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.24106135637054527
+  }
+ ],
+ "leave_sites_out/GB": [
+  {
+   "fold": 0,
+   "max_depth": 3,
+   "threshold": 0.0033809607055444494
+  },
+  {
+   "fold": 1,
+   "max_depth": 2,
+   "threshold": 0.08370291724109434
+  },
+  {
+   "fold": 2,
+   "max_depth": 2,
+   "threshold": 0.07764410598506014
+  },
+  {
+   "fold": 3,
+   "max_depth": 2,
+   "threshold": 0.07429324136647572
+  },
+  {
+   "fold": 4,
+   "max_depth": 2,
+   "threshold": 0.03598053367950717
+  }
+ ],
+ "leave_sites_out/HGB": [
+  {
+   "fold": 0,
+   "learning_rate": 0.05,
+   "max_depth": null,
+   "threshold": 0.0018084843332048341
+  },
+  {
+   "fold": 1,
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.065501444904745
+  },
+  {
+   "fold": 2,
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.0783282474951846
+  },
+  {
+   "fold": 3,
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.028539570536242096
+  },
+  {
+   "fold": 4,
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 0.052921938269118396
+  }
+ ],
+ "leave_sites_out/SVM": [
+  {
+   "fold": 0,
+   "C": 1,
+   "kernel": "linear",
+   "threshold": -0.9999730735637786
+  },
+  {
+   "fold": 1,
+   "C": 1,
+   "kernel": "linear",
+   "threshold": -0.999858610691283
+  },
+  {
+   "fold": 2,
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.9992217720080946
+  },
+  {
+   "fold": 3,
+   "C": 10,
+   "kernel": "linear",
+   "threshold": -0.9999046511546007
+  },
+  {
+   "fold": 4,
+   "C": 1,
+   "kernel": "linear",
+   "threshold": -0.9999900873823249
+  }
+ ],
+ "leave_sites_out/MLP": [
+  {
+   "fold": 0,
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ],
+   "threshold": 0.1440499964478561
+  },
+  {
+   "fold": 1,
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.08076802005092065
+  },
+  {
+   "fold": 2,
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.07731903525465264
+  },
+  {
+   "fold": 3,
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.08612370410391278
+  },
+  {
+   "fold": 4,
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.00458225088515455
+  }
+ ]
+}
