@@ -1,0 +1,466 @@
+{
+ "random/LR": [
+  {
+   "C": 0.1,
+   "class_weight": "balanced"
+  }
+ ],
+ "random/LDA": [
+  {}
+ ],
+ "random/NB": [
+  {}
+ ],
+ "random/KNN": [
+  {
+   "n_neighbors": 5,
+   "weights": "distance"
+  }
+ ],
+ "random/DT": [
+  {
+   "max_depth": null,
+   "min_samples_leaf": 20
+  }
+ ],
+ "random/RF": [
+  {
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  }
+ ],
+ "random/ET": [
+  {
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  }
+ ],
+ "random/AdaBoost": [
+  {
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  }
+ ],
+ "random/GB": [
+  {
+   "max_depth": 3
+  }
+ ],
+ "random/HGB": [
+  {
+   "learning_rate": 0.1,
+   "max_depth": null
+  }
+ ],
+ "random/SVM": [
+  {
+   "C": 10,
+   "kernel": "rbf"
+  }
+ ],
+ "random/MLP": [
+  {
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  }
+ ],
+ "leave_sites_out/LR": [
+  {
+   "fold": 0,
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "fold": 1,
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "fold": 2,
+   "C": 0.01,
+   "class_weight": "balanced"
+  },
+  {
+   "fold": 3,
+   "C": 0.1,
+   "class_weight": "balanced"
+  },
+  {
+   "fold": 4,
+   "C": 10,
+   "class_weight": "balanced"
+  }
+ ],
+ "leave_sites_out/LDA": [
+  {
+   "fold": 0
+  },
+  {
+   "fold": 1
+  },
+  {
+   "fold": 2
+  },
+  {
+   "fold": 3
+  },
+  {
+   "fold": 4
+  }
+ ],
+ "leave_sites_out/NB": [
+  {
+   "fold": 0
+  },
+  {
+   "fold": 1
+  },
+  {
+   "fold": 2
+  },
+  {
+   "fold": 3
+  },
+  {
+   "fold": 4
+  }
+ ],
+ "leave_sites_out/KNN": [
+  {
+   "fold": 0,
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "fold": 1,
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "fold": 2,
+   "n_neighbors": 5,
+   "weights": "uniform"
+  },
+  {
+   "fold": 3,
+   "n_neighbors": 5,
+   "weights": "distance"
+  },
+  {
+   "fold": 4,
+   "n_neighbors": 5,
+   "weights": "distance"
+  }
+ ],
+ "leave_sites_out/DT": [
+  {
+   "fold": 0,
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "fold": 1,
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "fold": 2,
+   "max_depth": null,
+   "min_samples_leaf": 20
+  },
+  {
+   "fold": 3,
+   "max_depth": null,
+   "min_samples_leaf": 1
+  },
+  {
+   "fold": 4,
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "leave_sites_out/RF": [
+  {
+   "fold": 0,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 1,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 2,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 3,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 4,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  }
+ ],
+ "leave_sites_out/ET": [
+  {
+   "fold": 0,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 1,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 2,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 3,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  },
+  {
+   "fold": 4,
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  }
+ ],
+ "leave_sites_out/AdaBoost": [
+  {
+   "fold": 0,
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  },
+  {
+   "fold": 1,
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  },
+  {
+   "fold": 2,
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  },
+  {
+   "fold": 3,
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  },
+  {
+   "fold": 4,
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  }
+ ],
+ "leave_sites_out/GB": [
+  {
+   "fold": 0,
+   "max_depth": 3
+  },
+  {
+   "fold": 1,
+   "max_depth": 3
+  },
+  {
+   "fold": 2,
+   "max_depth": 3
+  },
+  {
+   "fold": 3,
+   "max_depth": 3
+  },
+  {
+   "fold": 4,
+   "max_depth": 3
+  }
+ ],
+ "leave_sites_out/HGB": [
+  {
+   "fold": 0,
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "fold": 1,
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "fold": 2,
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "fold": 3,
+   "learning_rate": 0.1,
+   "max_depth": null
+  },
+  {
+   "fold": 4,
+   "learning_rate": 0.1,
+   "max_depth": null
+  }
+ ],
+ "leave_sites_out/SVM": [
+  {
+   "fold": 0,
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "fold": 1,
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "fold": 2,
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "fold": 3,
+   "C": 10,
+   "kernel": "rbf"
+  },
+  {
+   "fold": 4,
+   "C": 10,
+   "kernel": "rbf"
+  }
+ ],
+ "leave_sites_out/MLP": [
+  {
+   "fold": 0,
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "fold": 1,
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "fold": 2,
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "fold": 3,
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  },
+  {
+   "fold": 4,
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  }
+ ],
+ "chronological/LR": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "C": 0.01,
+   "class_weight": "balanced"
+  }
+ ],
+ "chronological/LDA": [
+  {
+   "cut": "2022-06-30 01:42:00"
+  }
+ ],
+ "chronological/NB": [
+  {
+   "cut": "2022-06-30 01:42:00"
+  }
+ ],
+ "chronological/KNN": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "n_neighbors": 5,
+   "weights": "uniform"
+  }
+ ],
+ "chronological/DT": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "max_depth": null,
+   "min_samples_leaf": 1
+  }
+ ],
+ "chronological/RF": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  }
+ ],
+ "chronological/ET": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "max_depth": 20,
+   "min_samples_leaf": 5
+  }
+ ],
+ "chronological/AdaBoost": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "learning_rate": 1.0,
+   "n_estimators": 200
+  }
+ ],
+ "chronological/GB": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "max_depth": 3
+  }
+ ],
+ "chronological/HGB": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "learning_rate": 0.1,
+   "max_depth": null
+  }
+ ],
+ "chronological/SVM": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "C": 10,
+   "kernel": "rbf"
+  }
+ ],
+ "chronological/MLP": [
+  {
+   "cut": "2022-06-30 01:42:00",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ]
+  }
+ ]
+}

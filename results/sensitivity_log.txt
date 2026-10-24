@@ -1,0 +1,15 @@
+DALTON  LR    random   F1=0.912 BA=0.511 MCC=0.111
+DALTON  LR    grouped  F1=0.892 BA=0.492 MCC=-0.029
+DALTON  DT    random   F1=0.928 BA=0.689 MCC=0.469
+DALTON  DT    grouped  F1=0.882 BA=0.541 MCC=0.102
+DALTON  KNN   random   F1=0.930 BA=0.701 MCC=0.493
+DALTON  KNN   grouped  F1=0.880 BA=0.566 MCC=0.152
+Lovric  LR    random   F1=0.757 BA=0.743 MCC=0.483
+Lovric  LR    grouped  F1=0.738 BA=0.710 MCC=0.418
+Lovric  DT    random   F1=0.912 BA=0.902 MCC=0.803
+Lovric  DT    grouped  F1=0.823 BA=0.775 MCC=0.570
+Lovric  KNN   random   F1=0.928 BA=0.919 MCC=0.838
+Lovric  KNN   grouped  F1=0.726 BA=0.710 MCC=0.418
+  dataset      n  groups  who_poor  my_poor    co2  pm25_who  pm25_my  pm10_who  pm10_my
+0  DALTON  28375      29     0.951    0.837  0.023     0.949    0.830     0.790    0.266
+1  Lovric  35381      26     0.723    0.556  0.400     0.723    0.482     0.376    0.141

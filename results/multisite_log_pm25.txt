@@ -1,0 +1,13 @@
+label=PM2.5 n=120590 sites=95 prevalence=0.043
+PM2.5     leave_sites_out  LR        F1=0.122 BA=0.612 (10s)
+PM2.5     leave_sites_out  LDA       F1=0.000 BA=0.500 (4s)
+PM2.5     leave_sites_out  NB        F1=0.001 BA=0.500 (5s)
+PM2.5     leave_sites_out  KNN       F1=0.030 BA=0.503 (28s)
+PM2.5     leave_sites_out  DT        F1=0.052 BA=0.504 (21s)
+PM2.5     leave_sites_out  RF        F1=0.006 BA=0.499 (676s)
+PM2.5     leave_sites_out  ET        F1=0.000 BA=0.500 (135s)
+PM2.5     leave_sites_out  AdaBoost  F1=0.000 BA=0.500 (138s)
+PM2.5     leave_sites_out  GB        F1=0.009 BA=0.500 (116s)
+PM2.5     leave_sites_out  HGB       F1=0.007 BA=0.499 (30s)
+PM2.5     leave_sites_out  SVM       F1=0.000 BA=0.500 (160s)
+PM2.5     leave_sites_out  MLP       F1=0.002 BA=0.499 (76s)

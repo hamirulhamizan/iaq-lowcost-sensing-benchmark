@@ -1,0 +1,2 @@
+`wfh_long.csv`: hourly CO2, PM2.5, TVOC, temperature, RH and SPL from 95 work-from-home offices, reshaped to long format.
+Source: Rysanek, A. (2024). *Data for: A novel dataset of indoor environmental conditions in work-from-home settings* (Version 1) [Data set]. Mendeley Data. https://doi.org/10.17632/7ggv5vhpwb.1 — CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Changes: reshaped from wide to long format; no values altered.

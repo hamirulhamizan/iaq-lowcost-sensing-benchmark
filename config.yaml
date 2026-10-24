@@ -42,3 +42,17 @@ ablation:
     Baseline-corrected T, RH + L: [bTemperature, bHumidity, Light]
     Baseline-corrected + rate of change: [bTemperature, bHumidity, Light, dTemperature, dHumidity, dLight]
   thresholds_ppm: [800, 1000, 1200]
+multisite:                         # multi-pollutant extension: work-from-home offices (Rysanek, 2024; CC BY 4.0)
+  file: data/wfh/wfh_long.csv
+  inputs: [Temperature, Humidity, SPL]   # low-cost temperature, RH and sound pressure level; CO2, PM2.5 and TVOC are never inputs
+  thresholds: {CO2_ppm: 1000, PM25_ugm3: 15, TVOC_ppb: 3000}   # ICOP-IAQ 2010 (CO2, TVOC 3 ppm); WHO 2021 24-h guideline (PM2.5)
+  outer_folds: 5                    # leave-sites-out: GroupKFold over 95 sites
+  chrono_train_frac: 0.7           # chronological hold-out: first 70% of the monitoring period for training
+  svm_max_train: 20000             # kernel SVM fitted on a stratified random sample of at most 20,000 training hours
+  model_overrides:                 # memory limit (7 GB): forests on ~77k training hours use bounded depth
+    RF: {grid: {max_depth: [5, 10, 20], min_samples_leaf: [5, 20]}}
+    ET: {grid: {max_depth: [5, 10, 20], min_samples_leaf: [5, 20]}}
+sensitivity:                       # high-pollution datasets modelled under Malaysian limits (PM2.5 35, PM10 100 ug/m3; MAAQS 2020)
+  dalton_file: data/dalton/dalton_hourly.csv   # DALTON (Karmakar et al., 2024), hourly means of 1-Hz data, 29 sites
+  lovric_file: data/lovric/lovric_minute.csv   # Lovric et al. (2025), 1-min reference-grade data, 26 days
+  models: [LR, DT, KNN]

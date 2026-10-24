@@ -1,0 +1,13 @@
+label=CO2 n=120590 sites=95 prevalence=0.108
+CO2       leave_sites_out  LR        F1=0.342 BA=0.704 (10s)
+CO2       leave_sites_out  LDA       F1=0.127 BA=0.532 (4s)
+CO2       leave_sites_out  NB        F1=0.000 BA=0.500 (4s)
+CO2       leave_sites_out  KNN       F1=0.187 BA=0.548 (28s)
+CO2       leave_sites_out  DT        F1=0.216 BA=0.561 (21s)
+CO2       leave_sites_out  RF        F1=0.134 BA=0.532 (654s)
+CO2       leave_sites_out  ET        F1=0.000 BA=0.500 (138s)
+CO2       leave_sites_out  AdaBoost  F1=0.061 BA=0.514 (145s)
+CO2       leave_sites_out  GB        F1=0.117 BA=0.528 (116s)
+CO2       leave_sites_out  HGB       F1=0.132 BA=0.531 (39s)
+CO2       leave_sites_out  SVM       F1=0.051 BA=0.512 (223s)
+CO2       leave_sites_out  MLP       F1=0.118 BA=0.529 (125s)

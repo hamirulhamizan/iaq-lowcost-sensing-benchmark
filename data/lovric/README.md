@@ -1,0 +1,2 @@
+`lovric_minute.csv`: 1-min reference-device PM2.5, PM10, CO2, VOC, temperature and RH, low-cost formaldehyde and people counts.
+Source: Lovrić, M., et al. (2025). *Indoor and ambient air pollution dataset using a multi-instrument approach and total event monitoring* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.14763137 — CC BY 4.0. Changes: selected columns, resampled to 1-min means, formaldehyde forward-filled up to 15 min and people counts up to 5 min.
