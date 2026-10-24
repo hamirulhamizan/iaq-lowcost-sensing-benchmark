@@ -7,7 +7,7 @@ authors:
   - family-names: "[Surname]"
     given-names: "[Given name]"
     affiliation: "[Institution, Malaysia]"
-repository-code: "https://github.com/[username]/[repository]"
+repository-code: "https://github.com/hamirulhamizan/iaq-lowcost-sensing-benchmark"
 preferred-citation:
   type: article
   title: "[Final article title]"
