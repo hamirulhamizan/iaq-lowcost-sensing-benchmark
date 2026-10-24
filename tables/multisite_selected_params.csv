@@ -1,0 +1,13 @@
+model,modal_params,folds
+LR,"{""C"": 0.01, ""class_weight"": ""balanced""}",3/5
+DT,"{""max_depth"": null, ""min_samples_leaf"": 1}",4/5
+KNN,"{""n_neighbors"": 5, ""weights"": ""distance""}",4/5
+RF,"{""max_depth"": 20, ""min_samples_leaf"": 5}",5/5
+HGB,"{""learning_rate"": 0.1, ""max_depth"": null}",5/5
+MLP,"{""alpha"": 0.01, ""hidden_layer_sizes"": [20, 10]}",3/5
+GB,"{""max_depth"": 3}",5/5
+LDA,{},5/5
+AdaBoost,"{""learning_rate"": 1.0, ""n_estimators"": 200}",5/5
+SVM,"{""C"": 10, ""kernel"": ""rbf""}",5/5
+NB,{},5/5
+ET,"{""max_depth"": 20, ""min_samples_leaf"": 5}",5/5

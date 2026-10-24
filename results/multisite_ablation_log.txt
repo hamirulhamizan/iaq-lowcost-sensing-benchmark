@@ -1,0 +1,40 @@
+models: {'LR': {'C': 0.01, 'class_weight': 'balanced'}, 'DT': {'max_depth': None, 'min_samples_leaf': 1}, 'KNN': {'n_neighbors': 5, 'weights': 'distance'}}
+All (T+RH+SPL)             LR   F1=0.399 MCC=0.286 (6s)
+All (T+RH+SPL)             DT   F1=0.268 MCC=0.140 (8s)
+All (T+RH+SPL)             KNN  F1=0.252 MCC=0.165 (7s)
+w/o Temperature            LR   F1=0.377 MCC=0.257 (6s)
+w/o Temperature            DT   F1=0.237 MCC=0.105 (7s)
+w/o Temperature            KNN  F1=0.210 MCC=0.119 (6s)
+w/o Humidity               LR   F1=0.211 MCC=-0.021 (6s)
+w/o Humidity               DT   F1=0.147 MCC=0.002 (7s)
+w/o Humidity               KNN  F1=0.094 MCC=0.006 (7s)
+w/o SPL                    LR   F1=0.398 MCC=0.286 (6s)
+w/o SPL                    DT   F1=0.263 MCC=0.139 (7s)
+w/o SPL                    KNN  F1=0.243 MCC=0.160 (6s)
+Temperature only           LR   F1=0.187 MCC=-0.056 (6s)
+Temperature only           DT   F1=0.027 MCC=0.044 (6s)
+Temperature only           KNN  F1=0.056 MCC=0.010 (6s)
+Humidity only              LR   F1=0.377 MCC=0.257 (7s)
+Humidity only              DT   F1=0.099 MCC=0.100 (7s)
+Humidity only              KNN  F1=0.152 MCC=0.108 (6s)
+SPL only                   LR   F1=0.251 MCC=0.041 (6s)
+SPL only                   DT   F1=0.015 MCC=0.001 (6s)
+SPL only                   KNN  F1=0.061 MCC=-0.004 (6s)
++ Rate of change (1 h)     LR   F1=0.403 MCC=0.293 (7s)
++ Rate of change (1 h)     DT   F1=0.275 MCC=0.151 (11s)
++ Rate of change (1 h)     KNN  F1=0.240 MCC=0.166 (14s)
++ Time of day              LR   F1=0.398 MCC=0.286 (6s)
++ Time of day              DT   F1=0.273 MCC=0.146 (8s)
++ Time of day              KNN  F1=0.243 MCC=0.169 (7s)
++ Rate of change + time of day LR   F1=0.404 MCC=0.293 (6s)
++ Rate of change + time of day DT   F1=0.272 MCC=0.146 (11s)
++ Rate of change + time of day KNN  F1=0.217 MCC=0.148 (28s)
+PM2.5 > 15 LR   prevalence=0.145 F1=0.399 MCC=0.286
+PM2.5 > 15 DT   prevalence=0.145 F1=0.268 MCC=0.140
+PM2.5 > 15 KNN  prevalence=0.145 F1=0.252 MCC=0.165
+PM2.5 > 25 LR   prevalence=0.132 F1=0.380 MCC=0.280
+PM2.5 > 25 DT   prevalence=0.132 F1=0.247 MCC=0.127
+PM2.5 > 25 KNN  prevalence=0.132 F1=0.229 MCC=0.151
+PM2.5 > 35 LR   prevalence=0.125 F1=0.370 MCC=0.277
+PM2.5 > 35 DT   prevalence=0.125 F1=0.239 MCC=0.124
+PM2.5 > 35 KNN  prevalence=0.125 F1=0.215 MCC=0.141

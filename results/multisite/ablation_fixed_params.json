@@ -1,0 +1,14 @@
+{
+ "LR": {
+  "C": 0.01,
+  "class_weight": "balanced"
+ },
+ "DT": {
+  "max_depth": null,
+  "min_samples_leaf": 1
+ },
+ "KNN": {
+  "n_neighbors": 5,
+  "weights": "distance"
+ }
+}

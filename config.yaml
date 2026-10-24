@@ -49,6 +49,19 @@ multisite:                         # multi-pollutant extension: work-from-home o
   outer_folds: 5                    # leave-sites-out: GroupKFold over 95 sites
   chrono_train_frac: 0.7           # chronological hold-out: first 70% of the monitoring period for training
   svm_max_train: 20000             # kernel SVM fitted on a stratified random sample of at most 20,000 training hours
+  ablation:                        # Study 2 ablations: three best leave-sites-out models, hyperparameters fixed (modal over the 5 folds)
+    feature_sets:
+      All (T+RH+SPL): [Temperature, Humidity, SPL]
+      w/o Temperature: [Humidity, SPL]
+      w/o Humidity: [Temperature, SPL]
+      w/o SPL: [Temperature, Humidity]
+      Temperature only: [Temperature]
+      Humidity only: [Humidity]
+      SPL only: [SPL]
+      + Rate of change (1 h): [Temperature, Humidity, SPL, dTemperature, dHumidity, dSPL]
+      + Time of day: [Temperature, Humidity, SPL, hour_sin, hour_cos]
+      + Rate of change + time of day: [Temperature, Humidity, SPL, dTemperature, dHumidity, dSPL, hour_sin, hour_cos]
+    pm25_thresholds: [15, 25, 35]  # WHO 2021 guideline, WHO 2021 interim target 4, MAAQS 2020 (24-h values)
   model_overrides:                 # memory limit (7 GB): forests on ~77k training hours use bounded depth
     RF: {grid: {max_depth: [5, 10, 20], min_samples_leaf: [5, 20]}}
     ET: {grid: {max_depth: [5, 10, 20], min_samples_leaf: [5, 20]}}

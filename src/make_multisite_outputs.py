@@ -52,3 +52,32 @@ ax.set_xticks(x); ax.set_xticklabels([f'{c}\n(n = {n[c]:,} h)' for c in causes],
 ax.legend(fontsize=7, ncol=4, frameon=False, loc='upper right'); ax.grid(axis='y', alpha=0.3, lw=0.4)
 fig.tight_layout(); fig.savefig('figures/fig7_recall_by_pollutant.png', dpi=300); plt.close()
 print(out.round(3).to_string()); print(rc[rc.model.isin(top)].round(3).to_string())
+
+# selected hyperparameters in Study 2 (modal over the 5 leave-sites-out folds)
+import json, collections
+prm = json.load(open('results/multisite/params_composite_random_leave_sites_out_chronological.json'))
+sel = []
+for m in order:
+    c = collections.Counter(json.dumps({k: v for k, v in d.items() if k != 'fold'}, sort_keys=True) for d in prm[f'leave_sites_out/{m}'])
+    best, n = c.most_common(1)[0]; sel.append(dict(model=m, modal_params=best, folds=f'{n}/{len(prm[f"leave_sites_out/{m}"])}'))
+pd.DataFrame(sel).to_csv('tables/multisite_selected_params.csv', index=False)
+
+# Study 2 ablation table and figure
+if os.path.exists('results/multisite/ablation_features.csv'):
+    import yaml
+    sets = list(yaml.safe_load(open('config.yaml'))['multisite']['ablation']['feature_sets'].keys())
+    ab = pd.read_csv('results/multisite/ablation_features.csv')
+    f1 = ab.pivot(index='setting', columns='model', values='f1').loc[sets]
+    mcc = ab.pivot(index='setting', columns='model', values='mcc').loc[sets]
+    models = ab.model.unique().tolist(); f1 = f1[models]; mcc = mcc[models]
+    out2 = pd.concat({'f1': f1, 'mcc': mcc}, axis=1); out2.to_csv('tables/multisite_ablation_features.csv')
+    fig, ax = plt.subplots(figsize=(6.6, 3.1)); y = np.arange(len(sets)); hgt = 0.8 / len(models)
+    for k, m in enumerate(models):
+        ax.barh(y + (k - (len(models) - 1) / 2) * hgt, f1[m], hgt, color=[NAVY, MID, LIGHT][k], label=m)
+    ax.set_yticks(y); ax.set_yticklabels(sets, fontsize=7.5); ax.invert_yaxis(); ax.set_xlabel('F1-score (leave-sites-out, multi-pollutant label)')
+    ax.axvline(f1.loc[sets[0]].max(), color='grey', ls=':', lw=0.8); ax.set_xlim(0, max(0.6, f1.values.max() + 0.05))
+    ax.legend(fontsize=7, frameon=False, loc='lower right'); ax.grid(axis='x', alpha=0.3, lw=0.4)
+    fig.tight_layout(); fig.savefig('figures/fig8_multisite_ablation.png', dpi=300); plt.close()
+    print(out2.round(3).to_string())
+if os.path.exists('results/multisite/ablation_pm25_threshold.csv'):
+    th = pd.read_csv('results/multisite/ablation_pm25_threshold.csv'); print(th[['setting', 'model', 'prevalence', 'pm25_share', 'f1', 'mcc']].round(3).to_string())

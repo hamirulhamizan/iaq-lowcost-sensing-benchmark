@@ -11,6 +11,7 @@ python src/run_ablation.py
 python src/run_multisite.py random,leave_sites_out,chronological composite
 python src/run_multisite.py leave_sites_out CO2
 python src/run_multisite.py leave_sites_out PM2.5
+python src/run_multisite_ablation.py   # Study 2 feature ablation and PM2.5-limit sensitivity
 # Study 3: high-pollution datasets (requires data/dalton/dalton_hourly.csv, see src/data_prep/README.md)
 python src/run_sensitivity.py
 # Figures and tables

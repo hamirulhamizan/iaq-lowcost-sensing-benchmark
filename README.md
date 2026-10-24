@@ -20,9 +20,10 @@ and light or sound sensors only**, and how much the reported performance depends
 | `src/run_main.py` | 12 classifiers × 3 validation protocols |
 | `src/run_ablation.py` | Feature ablation and CO₂-threshold sensitivity (three best models) |
 | `src/run_multisite.py` | Study 2: 12 classifiers × random / leave-sites-out / chronological, composite and single-pollutant labels |
+| `src/run_multisite_ablation.py` | Study 2: feature ablation and PM2.5-limit sensitivity (15 / 25 / 35 µg/m³) for the three best models |
 | `src/run_sensitivity.py` | Study 3: DALTON and Lovrić under WHO and Malaysian limits |
 | `src/data_prep/` | Download, verification and preparation scripts for the Study 2–3 datasets (see its README) |
-| `src/make_figures.py`, `src/make_tables.py` | Figures and tables in the paper |
+| `src/make_figures.py`, `src/make_tables.py`, `src/make_multisite_outputs.py` | Figures and tables in the paper |
 | `results/` | Raw outputs: summary metrics, per-day metrics, selected hyperparameters per fold, leave-one-day-out predictions, logs |
 | `figures/`, `tables/` | Exactly the figures and tables used in the paper |
 
