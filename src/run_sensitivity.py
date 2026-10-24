@@ -6,11 +6,11 @@ Also reports label prevalence under the WHO 2021 limits used in the main analysi
 import os, sys, json, warnings
 warnings.filterwarnings('ignore')
 import numpy as np, pandas as pd
-import run_multisite as R
 from sklearn.model_selection import GroupKFold, train_test_split
-from common import metrics
+from common import load_config
+from engine import evaluate
 
-cfg = R.cfg; S = cfg['sensitivity']
+cfg = load_config(); S = cfg['sensitivity']
 os.makedirs('results/sensitivity', exist_ok=True)
 
 def label(d, pm25, pm10):
@@ -25,16 +25,14 @@ def load(name):
     return d.dropna(subset=['Temperature', 'Humidity', 'CO2', 'PM2.5', 'PM10']).reset_index(drop=True)
 
 def run(d, model, protocol):
-    X = d[['Temperature', 'Humidity']].values; y = d.poor.values; g = d.group.values.astype(str)
-    pred = np.full(len(d), -1)
+    idx = np.arange(len(d)); y = d.poor.values; g = d.group.values.astype(str); d = d.assign(group=g)
     if protocol == 'random':
-        tr, te = train_test_split(np.arange(len(d)), test_size=0.3, stratify=y, random_state=cfg['seed'])
-        est, _ = R.fit(model, X[tr], y[tr], inner='strat'); pred[te] = est.predict(X[te])
+        tr, te = train_test_split(idx, test_size=0.3, stratify=y, random_state=cfg['seed'])
+        pooled, *_ = evaluate(cfg, d, model, ['Temperature', 'Humidity'], [(tr, te, 'random')], block='group', inner='stratified')
     else:
-        for tr, te in GroupKFold(n_splits=min(5, len(set(g)))).split(X, y, g):
-            est, _ = R.fit(model, X[tr], y[tr], groups=g[tr]); pred[te] = est.predict(X[te])
-    m = pred >= 0
-    return metrics(y[m], pred[m])
+        outer = [(tr, te, k) for k, (tr, te) in enumerate(GroupKFold(n_splits=min(5, len(set(g)))).split(idx, y, g))]
+        pooled, *_ = evaluate(cfg, d, model, ['Temperature', 'Humidity'], outer, block='group', inner='group', inner_group='group')
+    return pooled
 
 rows, prev = [], []
 for name in ['DALTON', 'Lovric']:

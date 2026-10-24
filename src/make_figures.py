@@ -8,18 +8,18 @@ from common import load_config, load_data
 plt.rcParams.update({'font.family': 'DejaVu Serif', 'font.size': 8.5})
 cfg = load_config(); df = load_data(cfg)
 NAVY, LIGHT, RED, GREEN = '#1f4e79', '#9fb7d3', '#c62828', '#2e7d32'
-summ = pd.concat([pd.read_csv('results/main_summary_random_chronological.csv'), pd.read_csv('results/main_summary_leave_one_day_out.csv')])
-perday = pd.read_csv('results/main_per_day_leave_one_day_out.csv')
+summ = pd.read_csv('results/study1/summary.csv')
+perday = pd.read_csv('results/study1/per_day.csv'); perday = perday[perday.protocol == 'leave_one_day_out']
 order = summ[summ.protocol == 'leave_one_day_out'].sort_values('f1', ascending=False).model.tolist()
 
 # ---- Fig 1: framework
-steps = ["Four public datasets\n(1) office room, 17 days, 1 min   (2) 95 home offices, 1 h\n(3) 29 sites in India, 1 h   (4) 1 room in Croatia, 1 min",
-         "Pre-processing\nmerging, de-duplication, gap and validity checks, checksum verification;\nz-score scaling fitted on training folds only",
-         "Labelling\nStudy 1: CO$_2$ > 1000 ppm (ICOP-IAQ 2010)\nStudies 2–3: CO$_2$, PM2.5, PM10, TVOC vs ICOP-IAQ 2010 / WHO 2021 / MAAQS 2020",
-         "Inputs: low-cost temperature, RH, light or sound level\n(pollutant concentrations never used as inputs)",
-         "12 classifiers\nLR · LDA · NB · KNN · DT · RF · ET · AdaBoost · GB · HGB · SVM · MLP\nnested grid search (config.yaml)",
-         "Validation\nrandom 70/30 vs leave-one-day-out (Study 1) or leave-sites-out (Study 2)\nand chronological hold-out; grouped validation in Study 3",
-         "Evaluation & ablation\nF1, precision, recall, balanced accuracy, MCC; block-bootstrap 95% CI;\nper-day, per-occupancy and per-pollutant analyses; feature and threshold ablations"]
+steps = ["Two public datasets\nStudy 1: office room, 17 days, 1-min records\nStudy 2: 95 home offices, 53 days, hourly records",
+         "Pre-processing\nmerging, de-duplication, gap and validity checks;\nz-score scaling fitted on training folds only",
+         "Labelling (Poor if any limit is exceeded)\nStudy 1: CO$_2$ > 1000 ppm (ICOP-IAQ 2010)\nStudy 2: CO$_2$ > 1000 ppm, PM2.5 > 15 µg/m$^3$ (WHO 2021), TVOC > 3 ppm (ICOP-IAQ 2010)",
+         "Inputs: temperature, RH, and light (Study 1) or sound level (Study 2)\n(pollutant concentrations never used as inputs)",
+         "12 classifiers, identical treatment\nLR · LDA · NB · KNN · DT · RF · ET · AdaBoost · GB · HGB · SVM · MLP\ngrid search on PR-AUC, then F1-optimal threshold on inner out-of-fold scores",
+         "Validation\nrandom 70/30 vs leave-one-day-out (Study 1) or leave-sites-out (Study 2)\nand chronological hold-out",
+         "Evaluation\nF1, MCC, PR-AUC, block-bootstrap 95% CI; Friedman–Nemenyi tests;\nepisode-level detection; per-day, per-occupancy and per-pollutant analyses; ablations"]
 fig, ax = plt.subplots(figsize=(5.6, 7.0)); ax.axis('off'); n = len(steps); h = 0.108; gap = (1 - n * h) / (n - 1)
 for i, s in enumerate(steps):
     y = 1 - i * (h + gap) - h
@@ -70,7 +70,7 @@ fig.tight_layout(); fig.savefig('figures/fig4_perday_heatmap.png', dpi=300); plt
 
 # ---- Fig 5: feature ablation
 try:
-    ab = pd.read_csv('results/ablation_features.csv')
+    ab = pd.read_csv('results/study1/ablation_features.csv')
     sets = list(cfg['ablation']['feature_sets'].keys()); models = ab.model.unique().tolist()
     fig, ax = plt.subplots(figsize=(6.6, 3.2)); y = np.arange(len(sets)); hgt = 0.8 / len(models)
     cols = [NAVY, '#5b84b1', LIGHT]

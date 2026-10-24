@@ -6,24 +6,25 @@ plt.rcParams.update({'font.family': 'DejaVu Serif', 'font.size': 8.5})
 NAVY, MID, LIGHT = '#1f4e79', '#5b84b1', '#9fb7d3'
 os.makedirs('tables', exist_ok=True); os.makedirs('figures', exist_ok=True)
 
-S = pd.concat([pd.read_csv(f) for f in glob.glob('results/multisite/summary_*.csv')])
+S = pd.concat([pd.read_csv(f) for f in glob.glob('results/study2/summary_*.csv')])
 comp = S[S.label == 'composite']
 order = comp[comp.protocol == 'leave_sites_out'].sort_values('f1', ascending=False).model.tolist()
 t = comp.pivot(index='model', columns='protocol', values='f1').loc[order]
 lso = comp[comp.protocol == 'leave_sites_out'].set_index('model').loc[order]
 out = pd.DataFrame({'random_f1': t['random'], 'chronological_f1': t['chronological'], 'lso_f1': lso.f1, 'lso_ci_low': lso.f1_ci_low,
                     'lso_ci_high': lso.f1_ci_high, 'lso_precision': lso.precision, 'lso_recall': lso.recall,
-                    'lso_bal_acc': lso.balanced_accuracy, 'lso_mcc': lso.mcc})
+                    'lso_bal_acc': lso.balanced_accuracy, 'lso_mcc': lso.mcc,
+                    'lso_pr_auc': lso.pr_auc, 'lso_f1_default': lso.f1_default})
 for lab in ['CO2', 'PM2.5']:
     s = S[(S.label == lab) & (S.protocol == 'leave_sites_out')].set_index('model')
     if len(s): out[f'lso_f1_{lab}_only'] = s.f1.reindex(order)
 out.to_csv('tables/multisite_results.csv')
 
 # recall by which pollutant caused Poor IAQ (composite label, leave-sites-out predictions)
-P = pd.read_csv('results/multisite/lso_predictions_composite.csv')
+P = pd.read_csv('results/study2/lso_predictions_composite.csv.gz')
 rows = []
 for m in order:
-    p = P[m].values
+    p = P[f'{m}_pred'].values
     for name, mask in [('CO2 only', (P['exceed_CO2'] == 1) & (P['exceed_PM2.5'] == 0) & (P['exceed_TVOC'] == 0)),
                        ('PM2.5 only', (P['exceed_PM2.5'] == 1) & (P['exceed_CO2'] == 0) & (P['exceed_TVOC'] == 0)),
                        ('TVOC only', (P['exceed_TVOC'] == 1) & (P['exceed_CO2'] == 0) & (P['exceed_PM2.5'] == 0)),
@@ -55,18 +56,20 @@ print(out.round(3).to_string()); print(rc[rc.model.isin(top)].round(3).to_string
 
 # selected hyperparameters in Study 2 (modal over the 5 leave-sites-out folds)
 import json, collections
-prm = json.load(open('results/multisite/params_composite_random_leave_sites_out_chronological.json'))
+prm = json.load(open('results/study2/params_composite.json'))
 sel = []
 for m in order:
-    c = collections.Counter(json.dumps({k: v for k, v in d.items() if k != 'fold'}, sort_keys=True) for d in prm[f'leave_sites_out/{m}'])
-    best, n = c.most_common(1)[0]; sel.append(dict(model=m, modal_params=best, folds=f'{n}/{len(prm[f"leave_sites_out/{m}"])}'))
+    L = prm[f'leave_sites_out/{m}']
+    c = collections.Counter(json.dumps({k: v for k, v in d.items() if k not in ('fold', 'threshold')}, sort_keys=True) for d in L)
+    best, n = c.most_common(1)[0]; th = [d['threshold'] for d in L]
+    sel.append(dict(model=m, modal_params=best, folds=f'{n}/{len(L)}', threshold_median=np.median(th), threshold_min=min(th), threshold_max=max(th)))
 pd.DataFrame(sel).to_csv('tables/multisite_selected_params.csv', index=False)
 
 # Study 2 ablation table and figure
-if os.path.exists('results/multisite/ablation_features.csv'):
+if os.path.exists('results/study2/ablation_features.csv'):
     import yaml
     sets = list(yaml.safe_load(open('config.yaml'))['multisite']['ablation']['feature_sets'].keys())
-    ab = pd.read_csv('results/multisite/ablation_features.csv')
+    ab = pd.read_csv('results/study2/ablation_features.csv')
     f1 = ab.pivot(index='setting', columns='model', values='f1').loc[sets]
     mcc = ab.pivot(index='setting', columns='model', values='mcc').loc[sets]
     models = ab.model.unique().tolist(); f1 = f1[models]; mcc = mcc[models]
@@ -79,5 +82,5 @@ if os.path.exists('results/multisite/ablation_features.csv'):
     ax.legend(fontsize=7, frameon=False, loc='lower right'); ax.grid(axis='x', alpha=0.3, lw=0.4)
     fig.tight_layout(); fig.savefig('figures/fig8_multisite_ablation.png', dpi=300); plt.close()
     print(out2.round(3).to_string())
-if os.path.exists('results/multisite/ablation_pm25_threshold.csv'):
-    th = pd.read_csv('results/multisite/ablation_pm25_threshold.csv'); print(th[['setting', 'model', 'prevalence', 'pm25_share', 'f1', 'mcc']].round(3).to_string())
+if os.path.exists('results/study2/ablation_pm25_threshold.csv'):
+    th = pd.read_csv('results/study2/ablation_pm25_threshold.csv'); print(th[['setting', 'model', 'prevalence', 'pm25_share', 'f1', 'mcc']].round(3).to_string())

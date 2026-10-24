@@ -1,0 +1,1381 @@
+{
+ "random/LR": [
+  {
+   "fold": "random",
+   "C": 10,
+   "threshold": 0.3439333379770439
+  }
+ ],
+ "random/LDA": [
+  {
+   "fold": "random",
+   "threshold": 0.26186467028386495
+  }
+ ],
+ "random/NB": [
+  {
+   "fold": "random",
+   "threshold": 0.5186256543504015
+  }
+ ],
+ "random/KNN": [
+  {
+   "fold": "random",
+   "n_neighbors": 11,
+   "weights": "uniform",
+   "threshold": 0.45454545454545453
+  }
+ ],
+ "random/DT": [
+  {
+   "fold": "random",
+   "max_depth": null,
+   "min_samples_leaf": 20,
+   "threshold": 0.5333333333333333
+  }
+ ],
+ "random/RF": [
+  {
+   "fold": "random",
+   "max_depth": 20,
+   "min_samples_leaf": 5,
+   "threshold": 0.4560569576789417
+  }
+ ],
+ "random/ET": [
+  {
+   "fold": "random",
+   "max_depth": 20,
+   "min_samples_leaf": 5,
+   "threshold": 0.2785954416501542
+  }
+ ],
+ "random/AdaBoost": [
+  {
+   "fold": "random",
+   "learning_rate": 1.0,
+   "n_estimators": 200,
+   "threshold": 0.49389284952770235
+  }
+ ],
+ "random/GB": [
+  {
+   "fold": "random",
+   "max_depth": 3,
+   "threshold": 0.5347752188372342
+  }
+ ],
+ "random/HGB": [
+  {
+   "fold": "random",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 0.5804029068294406
+  }
+ ],
+ "random/SVM": [
+  {
+   "fold": "random",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": -0.5824882377653067
+  }
+ ],
+ "random/MLP": [
+  {
+   "fold": "random",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.512364537892679
+  }
+ ],
+ "leave_one_day_out/LR": [
+  {
+   "fold": "2015-02-02",
+   "C": 10,
+   "threshold": 0.2642079510888946
+  },
+  {
+   "fold": "2015-02-03",
+   "C": 0.01,
+   "threshold": 0.173814461319718
+  },
+  {
+   "fold": "2015-02-04",
+   "C": 10,
+   "threshold": 0.2632571523929357
+  },
+  {
+   "fold": "2015-02-05",
+   "C": 10,
+   "threshold": 0.17841603597051015
+  },
+  {
+   "fold": "2015-02-06",
+   "C": 0.01,
+   "threshold": 0.16998823860656914
+  },
+  {
+   "fold": "2015-02-07",
+   "C": 0.01,
+   "threshold": 0.16228258904573248
+  },
+  {
+   "fold": "2015-02-08",
+   "C": 0.01,
+   "threshold": 0.2038996938298784
+  },
+  {
+   "fold": "2015-02-09",
+   "C": 0.01,
+   "threshold": 0.1857693408809012
+  },
+  {
+   "fold": "2015-02-10",
+   "C": 0.01,
+   "threshold": 0.28902575788591095
+  },
+  {
+   "fold": "2015-02-11",
+   "C": 0.1,
+   "threshold": 0.28580849856167645
+  },
+  {
+   "fold": "2015-02-12",
+   "C": 0.01,
+   "threshold": 0.20394253405213913
+  },
+  {
+   "fold": "2015-02-13",
+   "C": 10,
+   "threshold": 0.23171822317617427
+  },
+  {
+   "fold": "2015-02-14",
+   "C": 0.01,
+   "threshold": 0.28829201289689305
+  },
+  {
+   "fold": "2015-02-15",
+   "C": 10,
+   "threshold": 0.49535393502983777
+  },
+  {
+   "fold": "2015-02-16",
+   "C": 0.01,
+   "threshold": 0.38856104071251363
+  },
+  {
+   "fold": "2015-02-17",
+   "C": 10,
+   "threshold": 0.20895895491910546
+  },
+  {
+   "fold": "2015-02-18",
+   "C": 0.01,
+   "threshold": 0.19292993204294054
+  }
+ ],
+ "leave_one_day_out/LDA": [
+  {
+   "fold": "2015-02-02",
+   "threshold": 0.30547268334343325
+  },
+  {
+   "fold": "2015-02-03",
+   "threshold": 0.2420333375776578
+  },
+  {
+   "fold": "2015-02-04",
+   "threshold": 0.30626890387610606
+  },
+  {
+   "fold": "2015-02-05",
+   "threshold": 0.2643670570868591
+  },
+  {
+   "fold": "2015-02-06",
+   "threshold": 0.20872180050773637
+  },
+  {
+   "fold": "2015-02-07",
+   "threshold": 0.17319219973805253
+  },
+  {
+   "fold": "2015-02-08",
+   "threshold": 0.17840869024509343
+  },
+  {
+   "fold": "2015-02-09",
+   "threshold": 0.1766308871902372
+  },
+  {
+   "fold": "2015-02-10",
+   "threshold": 0.3587985499601937
+  },
+  {
+   "fold": "2015-02-11",
+   "threshold": 0.3134971731429496
+  },
+  {
+   "fold": "2015-02-12",
+   "threshold": 0.23551853847671636
+  },
+  {
+   "fold": "2015-02-13",
+   "threshold": 0.33429736607906924
+  },
+  {
+   "fold": "2015-02-14",
+   "threshold": 0.2791646982684866
+  },
+  {
+   "fold": "2015-02-15",
+   "threshold": 0.4332777582686103
+  },
+  {
+   "fold": "2015-02-16",
+   "threshold": 0.3723563531789777
+  },
+  {
+   "fold": "2015-02-17",
+   "threshold": 0.346414598876044
+  },
+  {
+   "fold": "2015-02-18",
+   "threshold": 0.3586803288010918
+  }
+ ],
+ "leave_one_day_out/NB": [
+  {
+   "fold": "2015-02-02",
+   "threshold": 0.4695518408086724
+  },
+  {
+   "fold": "2015-02-03",
+   "threshold": 1.8370385262695816e-18
+  },
+  {
+   "fold": "2015-02-04",
+   "threshold": 0.4977548095694374
+  },
+  {
+   "fold": "2015-02-05",
+   "threshold": 0.0035078664927311125
+  },
+  {
+   "fold": "2015-02-06",
+   "threshold": 0.4079855617728937
+  },
+  {
+   "fold": "2015-02-07",
+   "threshold": 0.3783313484369433
+  },
+  {
+   "fold": "2015-02-08",
+   "threshold": 0.3395181401815162
+  },
+  {
+   "fold": "2015-02-09",
+   "threshold": 0.36340137324205063
+  },
+  {
+   "fold": "2015-02-10",
+   "threshold": 0.6128205924253738
+  },
+  {
+   "fold": "2015-02-11",
+   "threshold": 0.5947121705090257
+  },
+  {
+   "fold": "2015-02-12",
+   "threshold": 0.20130059208069181
+  },
+  {
+   "fold": "2015-02-13",
+   "threshold": 0.42821983215240655
+  },
+  {
+   "fold": "2015-02-14",
+   "threshold": 0.40920408153723176
+  },
+  {
+   "fold": "2015-02-15",
+   "threshold": 0.24539263008262
+  },
+  {
+   "fold": "2015-02-16",
+   "threshold": 0.4835278601561286
+  },
+  {
+   "fold": "2015-02-17",
+   "threshold": 0.5517089887058556
+  },
+  {
+   "fold": "2015-02-18",
+   "threshold": 0.032930493190065864
+  }
+ ],
+ "leave_one_day_out/KNN": [
+  {
+   "fold": "2015-02-02",
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.008357822472360015
+  },
+  {
+   "fold": "2015-02-03",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0392156862745098
+  },
+  {
+   "fold": "2015-02-04",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0392156862745098
+  },
+  {
+   "fold": "2015-02-05",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0784313725490196
+  },
+  {
+   "fold": "2015-02-06",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0392156862745098
+  },
+  {
+   "fold": "2015-02-07",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0784313725490196
+  },
+  {
+   "fold": "2015-02-08",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.09803921568627451
+  },
+  {
+   "fold": "2015-02-09",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.09803921568627451
+  },
+  {
+   "fold": "2015-02-10",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0392156862745098
+  },
+  {
+   "fold": "2015-02-11",
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.018196888058464308
+  },
+  {
+   "fold": "2015-02-12",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0784313725490196
+  },
+  {
+   "fold": "2015-02-13",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.5490196078431373
+  },
+  {
+   "fold": "2015-02-14",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0784313725490196
+  },
+  {
+   "fold": "2015-02-15",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0784313725490196
+  },
+  {
+   "fold": "2015-02-16",
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.04548268481500912
+  },
+  {
+   "fold": "2015-02-17",
+   "n_neighbors": 51,
+   "weights": "distance",
+   "threshold": 0.045493462234277506
+  },
+  {
+   "fold": "2015-02-18",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.0196078431372549
+  }
+ ],
+ "leave_one_day_out/DT": [
+  {
+   "fold": "2015-02-02",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.03664921465968586
+  },
+  {
+   "fold": "2015-02-03",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.0014934289127837516
+  },
+  {
+   "fold": "2015-02-04",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.046296296296296294
+  },
+  {
+   "fold": "2015-02-05",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.01384083044982699
+  },
+  {
+   "fold": "2015-02-06",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.06605922551252848
+  },
+  {
+   "fold": "2015-02-07",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.2496732026143791
+  },
+  {
+   "fold": "2015-02-08",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.0194601381042059
+  },
+  {
+   "fold": "2015-02-09",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.0026365348399246705
+  },
+  {
+   "fold": "2015-02-10",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.04784688995215311
+  },
+  {
+   "fold": "2015-02-11",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.08549222797927461
+  },
+  {
+   "fold": "2015-02-12",
+   "max_depth": 8,
+   "min_samples_leaf": 100,
+   "threshold": 0.1282051282051282
+  },
+  {
+   "fold": "2015-02-13",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.10240963855421686
+  },
+  {
+   "fold": "2015-02-14",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.10662358642972536
+  },
+  {
+   "fold": "2015-02-15",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.06462585034013606
+  },
+  {
+   "fold": "2015-02-16",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.04
+  },
+  {
+   "fold": "2015-02-17",
+   "max_depth": 3,
+   "min_samples_leaf": 100,
+   "threshold": 0.23323615160349853
+  },
+  {
+   "fold": "2015-02-18",
+   "max_depth": 5,
+   "min_samples_leaf": 100,
+   "threshold": 0.3217391304347826
+  }
+ ],
+ "leave_one_day_out/RF": [
+  {
+   "fold": "2015-02-02",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.18723731875847793
+  },
+  {
+   "fold": "2015-02-03",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.06631710198231595
+  },
+  {
+   "fold": "2015-02-04",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.19099131636913594
+  },
+  {
+   "fold": "2015-02-05",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.08570453909103731
+  },
+  {
+   "fold": "2015-02-06",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.06692943366288005
+  },
+  {
+   "fold": "2015-02-07",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.06276169926562668
+  },
+  {
+   "fold": "2015-02-08",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.06276169926562668
+  },
+  {
+   "fold": "2015-02-09",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.08279998642259082
+  },
+  {
+   "fold": "2015-02-10",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.17703955818259723
+  },
+  {
+   "fold": "2015-02-11",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.09294934473644907
+  },
+  {
+   "fold": "2015-02-12",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.3996555510899716
+  },
+  {
+   "fold": "2015-02-13",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.39616063321707107
+  },
+  {
+   "fold": "2015-02-14",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.31369326507451384
+  },
+  {
+   "fold": "2015-02-15",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.3140442894308336
+  },
+  {
+   "fold": "2015-02-16",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.32719250118040205
+  },
+  {
+   "fold": "2015-02-17",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.12464118309500882
+  },
+  {
+   "fold": "2015-02-18",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.1652517289721566
+  }
+ ],
+ "leave_one_day_out/ET": [
+  {
+   "fold": "2015-02-02",
+   "max_depth": 20,
+   "min_samples_leaf": 20,
+   "threshold": 0.16092900765830628
+  },
+  {
+   "fold": "2015-02-03",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.053888938277970366
+  },
+  {
+   "fold": "2015-02-04",
+   "max_depth": 10,
+   "min_samples_leaf": 20,
+   "threshold": 0.17152073680624283
+  },
+  {
+   "fold": "2015-02-05",
+   "max_depth": 20,
+   "min_samples_leaf": 20,
+   "threshold": 0.12749334003609367
+  },
+  {
+   "fold": "2015-02-06",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.15776280320766103
+  },
+  {
+   "fold": "2015-02-07",
+   "max_depth": 5,
+   "min_samples_leaf": 5,
+   "threshold": 0.15240304514448805
+  },
+  {
+   "fold": "2015-02-08",
+   "max_depth": 10,
+   "min_samples_leaf": 5,
+   "threshold": 0.14547082479951345
+  },
+  {
+   "fold": "2015-02-09",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.14235916921575195
+  },
+  {
+   "fold": "2015-02-10",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.1736543412191035
+  },
+  {
+   "fold": "2015-02-11",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.16962747907492304
+  },
+  {
+   "fold": "2015-02-12",
+   "max_depth": 10,
+   "min_samples_leaf": 20,
+   "threshold": 0.3096453977831408
+  },
+  {
+   "fold": "2015-02-13",
+   "max_depth": 20,
+   "min_samples_leaf": 20,
+   "threshold": 0.3403425949524587
+  },
+  {
+   "fold": "2015-02-14",
+   "max_depth": 20,
+   "min_samples_leaf": 20,
+   "threshold": 0.2857421292415276
+  },
+  {
+   "fold": "2015-02-15",
+   "max_depth": 10,
+   "min_samples_leaf": 20,
+   "threshold": 0.305308289231437
+  },
+  {
+   "fold": "2015-02-16",
+   "max_depth": 20,
+   "min_samples_leaf": 20,
+   "threshold": 0.22345739382656532
+  },
+  {
+   "fold": "2015-02-17",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.1525911593953319
+  },
+  {
+   "fold": "2015-02-18",
+   "max_depth": 5,
+   "min_samples_leaf": 20,
+   "threshold": 0.14920981758414334
+  }
+ ],
+ "leave_one_day_out/AdaBoost": [
+  {
+   "fold": "2015-02-02",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.3803077781567083
+  },
+  {
+   "fold": "2015-02-03",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.3326558099065705
+  },
+  {
+   "fold": "2015-02-04",
+   "learning_rate": 1.0,
+   "n_estimators": 200,
+   "threshold": 0.4793941108724125
+  },
+  {
+   "fold": "2015-02-05",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.3314502627439022
+  },
+  {
+   "fold": "2015-02-06",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.37033337538831623
+  },
+  {
+   "fold": "2015-02-07",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.38424897979699313
+  },
+  {
+   "fold": "2015-02-08",
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.36452338596074135
+  },
+  {
+   "fold": "2015-02-09",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.37817307837597147
+  },
+  {
+   "fold": "2015-02-10",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.4172299758093129
+  },
+  {
+   "fold": "2015-02-11",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.38133771097561564
+  },
+  {
+   "fold": "2015-02-12",
+   "learning_rate": 1.0,
+   "n_estimators": 200,
+   "threshold": 0.45187703670270374
+  },
+  {
+   "fold": "2015-02-13",
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.4796607638315072
+  },
+  {
+   "fold": "2015-02-14",
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.45846189873872445
+  },
+  {
+   "fold": "2015-02-15",
+   "learning_rate": 1.0,
+   "n_estimators": 200,
+   "threshold": 0.4702945085992855
+  },
+  {
+   "fold": "2015-02-16",
+   "learning_rate": 1.0,
+   "n_estimators": 200,
+   "threshold": 0.4689021524457522
+  },
+  {
+   "fold": "2015-02-17",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.3499580158575658
+  },
+  {
+   "fold": "2015-02-18",
+   "learning_rate": 0.1,
+   "n_estimators": 200,
+   "threshold": 0.4468178036764425
+  }
+ ],
+ "leave_one_day_out/GB": [
+  {
+   "fold": "2015-02-02",
+   "max_depth": 2,
+   "threshold": 0.12899521734271444
+  },
+  {
+   "fold": "2015-02-03",
+   "max_depth": 2,
+   "threshold": 0.05515396699521097
+  },
+  {
+   "fold": "2015-02-04",
+   "max_depth": 2,
+   "threshold": 0.17598504250530028
+  },
+  {
+   "fold": "2015-02-05",
+   "max_depth": 2,
+   "threshold": 0.09474307001575526
+  },
+  {
+   "fold": "2015-02-06",
+   "max_depth": 2,
+   "threshold": 0.09771158421544973
+  },
+  {
+   "fold": "2015-02-07",
+   "max_depth": 2,
+   "threshold": 0.13153526232671298
+  },
+  {
+   "fold": "2015-02-08",
+   "max_depth": 2,
+   "threshold": 0.05343421085926341
+  },
+  {
+   "fold": "2015-02-09",
+   "max_depth": 2,
+   "threshold": 0.057757501542287024
+  },
+  {
+   "fold": "2015-02-10",
+   "max_depth": 2,
+   "threshold": 0.1334090055970409
+  },
+  {
+   "fold": "2015-02-11",
+   "max_depth": 2,
+   "threshold": 0.11431463102212165
+  },
+  {
+   "fold": "2015-02-12",
+   "max_depth": 2,
+   "threshold": 0.049938469478461645
+  },
+  {
+   "fold": "2015-02-13",
+   "max_depth": 2,
+   "threshold": 0.18573394375217808
+  },
+  {
+   "fold": "2015-02-14",
+   "max_depth": 2,
+   "threshold": 0.14225480200606738
+  },
+  {
+   "fold": "2015-02-15",
+   "max_depth": 2,
+   "threshold": 0.11414662109880633
+  },
+  {
+   "fold": "2015-02-16",
+   "max_depth": 2,
+   "threshold": 0.10852014507245258
+  },
+  {
+   "fold": "2015-02-17",
+   "max_depth": 2,
+   "threshold": 0.1426222730944775
+  },
+  {
+   "fold": "2015-02-18",
+   "max_depth": 2,
+   "threshold": 0.07601385376238029
+  }
+ ],
+ "leave_one_day_out/HGB": [
+  {
+   "fold": "2015-02-02",
+   "learning_rate": 0.1,
+   "max_depth": 3,
+   "threshold": 0.01020083476100502
+  },
+  {
+   "fold": "2015-02-03",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.00293441134302009
+  },
+  {
+   "fold": "2015-02-04",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.08333446667639187
+  },
+  {
+   "fold": "2015-02-05",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.0030581191047663546
+  },
+  {
+   "fold": "2015-02-06",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 0.00037109438697235247
+  },
+  {
+   "fold": "2015-02-07",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 6.186457060450613e-05
+  },
+  {
+   "fold": "2015-02-08",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 2.7526143691150718e-05
+  },
+  {
+   "fold": "2015-02-09",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 0.00024052726568816457
+  },
+  {
+   "fold": "2015-02-10",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.063236924729686
+  },
+  {
+   "fold": "2015-02-11",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.03133513107066522
+  },
+  {
+   "fold": "2015-02-12",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.13943814186065875
+  },
+  {
+   "fold": "2015-02-13",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.09291988662607277
+  },
+  {
+   "fold": "2015-02-14",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.07735979017318602
+  },
+  {
+   "fold": "2015-02-15",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.08733498331527849
+  },
+  {
+   "fold": "2015-02-16",
+   "learning_rate": 0.05,
+   "max_depth": null,
+   "threshold": 0.05809010280015796
+  },
+  {
+   "fold": "2015-02-17",
+   "learning_rate": 0.05,
+   "max_depth": 3,
+   "threshold": 0.007978033067367316
+  },
+  {
+   "fold": "2015-02-18",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 0.0006951177114650933
+  }
+ ],
+ "leave_one_day_out/SVM": [
+  {
+   "fold": "2015-02-02",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": -1.002561531903468
+  },
+  {
+   "fold": "2015-02-03",
+   "C": 10,
+   "kernel": "linear",
+   "threshold": -1.000044353554866
+  },
+  {
+   "fold": "2015-02-04",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": -1.0371574970464295
+  },
+  {
+   "fold": "2015-02-05",
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.8585200918718272
+  },
+  {
+   "fold": "2015-02-06",
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.8389716747763094
+  },
+  {
+   "fold": "2015-02-07",
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.8250624618331766
+  },
+  {
+   "fold": "2015-02-08",
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.8145677559602849
+  },
+  {
+   "fold": "2015-02-09",
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.4980429280873131
+  },
+  {
+   "fold": "2015-02-10",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": -0.9859866980195204
+  },
+  {
+   "fold": "2015-02-11",
+   "C": 0.1,
+   "kernel": "linear",
+   "threshold": -0.999996059005259
+  },
+  {
+   "fold": "2015-02-12",
+   "C": 0.1,
+   "kernel": "rbf",
+   "threshold": -0.5460075648671963
+  },
+  {
+   "fold": "2015-02-13",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": 1.1021516843744363
+  },
+  {
+   "fold": "2015-02-14",
+   "C": 0.1,
+   "kernel": "linear",
+   "threshold": -0.9990660941700817
+  },
+  {
+   "fold": "2015-02-15",
+   "C": 1,
+   "kernel": "rbf",
+   "threshold": -0.0334778094366005
+  },
+  {
+   "fold": "2015-02-16",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": -1.1017624567820956
+  },
+  {
+   "fold": "2015-02-17",
+   "C": 10,
+   "kernel": "rbf",
+   "threshold": -2.4096143995209376
+  },
+  {
+   "fold": "2015-02-18",
+   "C": 1,
+   "kernel": "linear",
+   "threshold": -1.0001225002716114
+  }
+ ],
+ "leave_one_day_out/MLP": [
+  {
+   "fold": "2015-02-02",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.00629666112425006
+  },
+  {
+   "fold": "2015-02-03",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.0009893240484514286
+  },
+  {
+   "fold": "2015-02-04",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.005680452549776063
+  },
+  {
+   "fold": "2015-02-05",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.00044337351572289733
+  },
+  {
+   "fold": "2015-02-06",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.0029624248621410933
+  },
+  {
+   "fold": "2015-02-07",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.0028029028755596663
+  },
+  {
+   "fold": "2015-02-08",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.0027755543856595086
+  },
+  {
+   "fold": "2015-02-09",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.001817207198442301
+  },
+  {
+   "fold": "2015-02-10",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.0014092527675638906
+  },
+  {
+   "fold": "2015-02-11",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ],
+   "threshold": 0.3188186248712249
+  },
+  {
+   "fold": "2015-02-12",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 1.0944819706577172e-06
+  },
+  {
+   "fold": "2015-02-13",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ],
+   "threshold": 0.23141839021699415
+  },
+  {
+   "fold": "2015-02-14",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.09096979865948904
+  },
+  {
+   "fold": "2015-02-15",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.21868912119598607
+  },
+  {
+   "fold": "2015-02-16",
+   "alpha": 0.0001,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.12290715217382257
+  },
+  {
+   "fold": "2015-02-17",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ],
+   "threshold": 0.2812239803292781
+  },
+  {
+   "fold": "2015-02-18",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    10
+   ],
+   "threshold": 0.0555281648442277
+  }
+ ],
+ "chronological/LR": [
+  {
+   "fold": "chronological",
+   "C": 10,
+   "threshold": 0.1331747026142721
+  }
+ ],
+ "chronological/LDA": [
+  {
+   "fold": "chronological",
+   "threshold": 0.47360658994967236
+  }
+ ],
+ "chronological/NB": [
+  {
+   "fold": "chronological",
+   "threshold": 0.5472134552552578
+  }
+ ],
+ "chronological/KNN": [
+  {
+   "fold": "chronological",
+   "n_neighbors": 51,
+   "weights": "uniform",
+   "threshold": 0.09803921568627451
+  }
+ ],
+ "chronological/DT": [
+  {
+   "fold": "chronological",
+   "max_depth": 8,
+   "min_samples_leaf": 100,
+   "threshold": 0.48
+  }
+ ],
+ "chronological/RF": [
+  {
+   "fold": "chronological",
+   "max_depth": 20,
+   "min_samples_leaf": 20,
+   "threshold": 0.17746872722941934
+  }
+ ],
+ "chronological/ET": [
+  {
+   "fold": "chronological",
+   "max_depth": 20,
+   "min_samples_leaf": 5,
+   "threshold": 0.22260146043498324
+  }
+ ],
+ "chronological/AdaBoost": [
+  {
+   "fold": "chronological",
+   "learning_rate": 1.0,
+   "n_estimators": 50,
+   "threshold": 0.42963998635069306
+  }
+ ],
+ "chronological/GB": [
+  {
+   "fold": "chronological",
+   "max_depth": 2,
+   "threshold": 0.03761739906657959
+  }
+ ],
+ "chronological/HGB": [
+  {
+   "fold": "chronological",
+   "learning_rate": 0.1,
+   "max_depth": null,
+   "threshold": 2.441668517409281e-05
+  }
+ ],
+ "chronological/SVM": [
+  {
+   "fold": "chronological",
+   "C": 1,
+   "kernel": "rbf",
+   "threshold": -1.4262992846561147
+  }
+ ],
+ "chronological/MLP": [
+  {
+   "fold": "chronological",
+   "alpha": 0.01,
+   "hidden_layer_sizes": [
+    20,
+    10
+   ],
+   "threshold": 0.08697147336717424
+  }
+ ]
+}
