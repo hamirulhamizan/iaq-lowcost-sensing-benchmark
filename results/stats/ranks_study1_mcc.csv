@@ -1,0 +1,13 @@
+model,mean_rank,within_cd_of_best
+LR,4.5,True
+AdaBoost,5.45,True
+GB,5.45,True
+DT,5.55,True
+LDA,5.75,True
+RF,5.85,True
+MLP,7.15,True
+NB,7.2,True
+SVM,7.5,True
+HGB,7.65,True
+KNN,7.75,True
+ET,8.2,True
