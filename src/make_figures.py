@@ -12,21 +12,8 @@ summ = pd.read_csv('results/study1/summary.csv')
 perday = pd.read_csv('results/study1/per_day.csv'); perday = perday[perday.protocol == 'leave_one_day_out']
 order = summ[summ.protocol == 'leave_one_day_out'].sort_values('f1', ascending=False).model.tolist()
 
-# ---- Fig 1: framework
-steps = ["Two public datasets\nStudy 1: office room, 17 days, 1-min records\nStudy 2: 95 home offices, 53 days, hourly records",
-         "Pre-processing\nmerging, de-duplication, gap and validity checks;\nz-score scaling fitted on training folds only",
-         "Exceedance labels (positive if any limit is exceeded)\nStudy 1: CO$_2$ > 1000 ppm (ICOP-IAQ 2010)\nStudy 2: CO$_2$ > 1000 ppm, PM2.5 > 15 µg/m$^3$ (WHO 2021), TVOC > 3 ppm (ICOP-IAQ 2010)",
-         "Inputs: temperature, RH, and light (Study 1) or sound level (Study 2)\n(pollutant concentrations never used as inputs)",
-         "12 classifiers (identical tuning) and simple-rule baselines\nLR · LDA · NB · KNN · DT · RF · ET · AdaBoost · GB · HGB · SVM · MLP\ngrid search on PR-AUC, then F1-optimal threshold on inner out-of-fold scores",
-         "Validation: random 70/30; unseen days (Study 1) or unseen homes (Study 2);\nfuture period; buffered and forward-chaining (prospective) sensitivity analyses",
-         "Evaluation\nF1, MCC, PR-AUC, bootstrap CIs, paired differences, Friedman tests;\nalarm burden and episode matching; occupancy and pollutant breakdowns; ablations"]
-fig, ax = plt.subplots(figsize=(5.6, 7.0)); ax.axis('off'); n = len(steps); h = 0.108; gap = (1 - n * h) / (n - 1)
-for i, s in enumerate(steps):
-    y = 1 - i * (h + gap) - h
-    ax.add_patch(FancyBboxPatch((0.02, y), 0.96, h, boxstyle='round,pad=0.004,rounding_size=0.015', fc='#e8eef6' if i % 2 == 0 else 'white', ec=NAVY, lw=1))
-    ax.text(0.5, y + h / 2, s, ha='center', va='center', fontsize=7.3)
-    if i < n - 1: ax.annotate('', xy=(0.5, y - gap + 0.002), xytext=(0.5, y), arrowprops=dict(arrowstyle='-|>', color=NAVY, lw=1))
-ax.set_xlim(0, 1); ax.set_ylim(-0.01, 1.01); fig.savefig('figures/fig1_framework.png', dpi=300, bbox_inches='tight'); plt.close()
+# ---- Fig 1: framework (drawn by make_framework.py)
+import runpy; runpy.run_path('src/make_framework.py')
 
 # ---- Fig 2: time series (gaps shown as breaks)
 d = df.set_index('date')[['Temperature', 'Humidity', 'Light', 'CO2', 'poor']].resample('1min').mean()
