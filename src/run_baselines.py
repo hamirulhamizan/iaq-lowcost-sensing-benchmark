@@ -54,5 +54,17 @@ pd.DataFrame(p1).assign(date=df.ts.astype(str), day=df.day, poor=df.poor, Occupa
 w = R2.load('composite'); outer, _ = R2.outer_splits(w, 'leave_sites_out')
 s2, p2, a2 = run(w, outer, {'Always Poor': const(1), 'Always Good': const(0), 'RH threshold': thr_rule('Humidity'), 'Sound-level threshold': thr_rule('SPL'), 'Working hours': hours_rule}, 'site', 'study2')
 pd.DataFrame(p2).assign(site=w.site.values, ts=w.ts.astype(str).values, poor=w.poor.values).to_csv('results/baselines/preds_study2.csv.gz', index=False)
+# the same rules under the temporal-sensitivity protocols (Protocols D, E and F)
+import run_temporal as RT
+from sklearn.model_selection import GroupKFold
+ex = []
+d1 = load_data(cfg)
+for kind in ['buffered_lodo', 'forward_chaining']:
+    o = RT.s1_outer(d1, kind); s, _, _ = run(df, o, {'Light threshold': thr_rule('Light'), 'Working hours': hours_rule}, 'day', 'study1'); ex.append(s.assign(protocol=kind))
+cut = w.ts.min() + (w.ts.max() - w.ts.min()) * R2.M['chrono_train_frac']; idx = np.arange(len(w))
+o = [(tr[w.ts.values[tr] <= cut], te[w.ts.values[te] > cut], k) for k, (tr, te) in enumerate(GroupKFold(n_splits=R2.M['outer_folds']).split(idx, w.poor, w.site))]
+s, _, _ = run(w, o, {'RH threshold': thr_rule('Humidity')}, 'site', 'study2'); ex.append(s.assign(protocol='homes_and_future'))
+pd.concat(ex).to_csv('results/baselines/summary_temporal.csv', index=False)
+print(pd.concat(ex)[['study', 'protocol', 'rule', 'f1', 'mcc']].round(3).to_string())
 pd.concat([s1, s2]).to_csv('results/baselines/summary.csv', index=False); pd.concat([a1, a2]).to_csv('results/baselines/params.csv', index=False)
 print(pd.concat([s1, s2])[['study', 'rule', 'f1', 'f1_ci_low', 'f1_ci_high', 'precision', 'recall', 'mcc', 'alarm_time', 'fpr']].round(3).to_string())

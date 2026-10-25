@@ -7,3 +7,4 @@ data/dalton/
 results/*/runs/
 results/log_v6.txt
 results/log_temporal.txt
+results/log_budget.txt

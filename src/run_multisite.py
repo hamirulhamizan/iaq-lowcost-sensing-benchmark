@@ -1,4 +1,4 @@
-"""Study 2 (95 home offices, Rysanek 2024): multi-pollutant label, inputs temperature, RH and sound level only.
+"""Study 2 (95 home offices, Manu & Rysanek 2024): multi-pollutant label, inputs temperature, RH and sound level only.
 Label (composite): Poor if CO2 > 1000 ppm (ICOP-IAQ 2010) OR PM2.5 > 15 ug/m3 (WHO 2021) OR TVOC > 3000 ppb (ICOP-IAQ 2010).
 Other labels: CO2, PM2.5 (single pollutant); composite_pm24h (PM2.5 as trailing 24-h mean, the averaging time of the
 WHO guideline); composite_noTVOC (CO2 or PM2.5 only).

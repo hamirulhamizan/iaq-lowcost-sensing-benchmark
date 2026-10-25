@@ -7,7 +7,7 @@ The study tests whether indoor air quality (IAQ) status can be classified from *
 and light or sound sensors only**, and how much the reported performance depends on the validation protocol.
 
 * **Study 1** – office room (Candanedo & Feldheim, 2016): CO₂-based label (CO₂ > 1000 ppm, ICOP-IAQ 2010).
-* **Study 2** – 95 home offices (Rysanek, 2024): multi-pollutant label (CO₂ > 1000 ppm, PM2.5 > 15 µg/m³ WHO 2021, TVOC > 3 ppm ICOP-IAQ 2010); validation that holds out whole homes.
+* **Study 2** – 95 home offices (Manu & Rysanek, 2024): multi-pollutant label (CO₂ > 1000 ppm, PM2.5 > 15 µg/m³ WHO 2021, TVOC > 3 ppm ICOP-IAQ 2010); validation that holds out whole homes.
 * **Supplementary Study 3** – high-pollution datasets from India (DALTON) and Croatia (Lovrić et al., 2025): label prevalence under WHO vs Malaysian (MAAQS 2020) limits and a sensitivity analysis.
 
 ## Contents

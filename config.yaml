@@ -45,7 +45,7 @@ ablation:
     Baseline-corrected T, RH + L: [bTemperature, bHumidity, Light]
     Baseline-corrected + rate of change: [bTemperature, bHumidity, Light, dTemperature, dHumidity, dLight]
   thresholds_ppm: [800, 1000, 1200]
-multisite:                         # multi-pollutant extension: work-from-home offices (Rysanek, 2024; CC BY 4.0)
+multisite:                         # multi-pollutant extension: work-from-home offices (Manu & Rysanek, 2024; CC BY 4.0)
   file: data/wfh/wfh_long.csv
   inputs: [Temperature, Humidity, SPL]   # low-cost temperature, RH and sound pressure level; CO2, PM2.5 and TVOC are never inputs
   thresholds: {CO2_ppm: 1000, PM25_ugm3: 15, TVOC_ppb: 3000}   # ICOP-IAQ 2010 (CO2, TVOC 3 ppm); WHO 2021 24-h guideline (PM2.5)
