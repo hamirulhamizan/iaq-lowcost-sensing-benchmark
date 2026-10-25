@@ -37,7 +37,7 @@ fig, ax = plt.subplots(figsize=(6.6, 2.9)); x = np.arange(len(order)); w = 0.27
 for k, (col, lab, c) in enumerate([('random_f1', 'Random 70/30', LIGHT), ('chronological_f1', 'Chronological hold-out', MID), ('lso_f1', 'Leave-sites-out', NAVY)]):
     ax.bar(x + (k - 1) * w, out[col], w, color=c, label=lab)
 ax.errorbar(x + w, out.lso_f1, yerr=[out.lso_f1 - out.lso_ci_low, out.lso_ci_high - out.lso_f1], fmt='none', ecolor='black', elinewidth=0.6, capsize=1.5)
-ax.set_xticks(x); ax.set_xticklabels(order, fontsize=7.5); ax.set_ylabel('F1-score (Poor IAQ, multi-pollutant)'); ax.set_ylim(0, 0.75)
+ax.set_xticks(x); ax.set_xticklabels(order, fontsize=7.5); ax.set_ylabel('F1-score (multi-pollutant exceedance)'); ax.set_ylim(0, 0.75)
 ax.legend(fontsize=7, ncol=3, loc='upper center', bbox_to_anchor=(0.5, 1.16), frameon=False); ax.grid(axis='y', alpha=0.3, lw=0.4)
 fig.tight_layout(); fig.savefig('figures/fig6_multisite_protocols.png', dpi=300); plt.close()
 
@@ -49,7 +49,7 @@ for k, m in enumerate(top):
     v = rc[rc.model == m].set_index('cause').loc[causes].recall
     ax.bar(x + (k - (len(top) - 1) / 2) * w, v, w, color=cols[k], label=m)
 n = rc[rc.model == top[0]].set_index('cause').loc[causes].n
-ax.set_xticks(x); ax.set_xticklabels([f'{c}\n(n = {n[c]:,} h)' for c in causes], fontsize=7.5); ax.set_ylabel('Recall of Poor IAQ'); ax.set_ylim(0, 1)
+ax.set_xticks(x); ax.set_xticklabels([f'{c}\n(n = {n[c]:,} h)' for c in causes], fontsize=7.5); ax.set_ylabel('Recall of exceedance hours'); ax.set_ylim(0, 1)
 ax.legend(fontsize=7, ncol=4, frameon=False, loc='upper right'); ax.grid(axis='y', alpha=0.3, lw=0.4)
 fig.tight_layout(); fig.savefig('figures/fig7_recall_by_pollutant.png', dpi=300); plt.close()
 print(out.round(3).to_string()); print(rc[rc.model.isin(top)].round(3).to_string())

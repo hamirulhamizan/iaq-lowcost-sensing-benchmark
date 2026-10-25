@@ -37,29 +37,42 @@ def merged(flag, ts, step, group, gap):
 
 
 def evaluate(P, models, ts, step, unit_min, min_len, group, n_days, gap):
+    """Episode matching: a true episode is detected if any alarm record falls inside it. It is 'already active at
+    onset' if the alarm is on at its first record, otherwise 'newly triggered' (delay = first alarm - onset).
+    Alarm episodes are merged predicted runs; event precision = share of alarm episodes overlapping any Poor record."""
     y = P.poor.values; ep = [(a, b) for a, b in merged(y, ts, step, group, gap) if ts[b] - ts[a] + step >= min_len * step]; rows = []
     for m in models:
-        p = P[f'{m}_pred'].values; det, delay = 0, []
+        p = P[f'{m}_pred'].values; det, onset, delay = 0, 0, []
         for a, b in ep:
             hit = np.flatnonzero(p[a:b + 1] == 1)
-            if len(hit): det += 1; delay.append(hit[0] * unit_min)
-        fa = [(a, b) for a, b in merged(p, ts, step, group, gap) if y[a:b + 1].sum() == 0]
-        rows.append(dict(model=m, episodes=len(ep), detected=det, episode_recall=det / len(ep),
-                         median_delay=float(np.median(delay)) if delay else np.nan,
-                         p75_delay=float(np.percentile(delay, 75)) if delay else np.nan,
+            if len(hit):
+                det += 1
+                if hit[0] == 0: onset += 1
+                else: delay.append(hit[0] * unit_min)
+        al = merged(p, ts, step, group, gap); fa = [(a, b) for a, b in al if y[a:b + 1].sum() == 0]
+        fp_units = int(((p == 1) & (y == 0)).sum())
+        rows.append(dict(model=m, episodes=len(ep), detected=det, episode_recall=det / len(ep), active_at_onset=onset,
+                         newly_triggered=det - onset, median_delay_new=float(np.median(delay)) if delay else np.nan,
+                         alarm_episodes=len(al), event_precision=(len(al) - len(fa)) / len(al) if al else np.nan,
                          false_alarm_runs=len(fa), false_alarm_runs_per_day=len(fa) / n_days,
-                         false_alarm_runs_ge_len=sum(1 for a, b in fa if ts[b] - ts[a] + step >= min_len * step) / n_days))
+                         alarm_time=float(p.mean()), false_alarm_time_per_day=fp_units * unit_min / n_days))
     return pd.DataFrame(rows)
 
 
 if __name__ == '__main__':
     models = pd.read_csv('results/study1/summary.csv').model.unique().tolist()
-    P = pd.read_csv('results/study1/lodo_predictions.csv.gz', parse_dates=['date']).sort_values('date').reset_index(drop=True)
+    P = pd.read_csv('results/study1/lodo_predictions.csv.gz', parse_dates=['date'])
+    B = pd.read_csv('results/baselines/preds_study1.csv.gz'); assert (B.date.values == P.date.astype(str).values).all()
+    rules1 = [c[:-5] for c in B.columns if c.endswith('_pred')]; P = pd.concat([P, B[[f'{r}_pred' for r in rules1]]], axis=1)
+    P = P.sort_values('date').reset_index(drop=True)
     ts = np.round((P.date - pd.Timestamp('1970-01-01')).dt.total_seconds().values / 60).astype(np.int64)
-    e1 = evaluate(P, models, ts, 1, 1, 15, None, P.day.nunique(), 15); e1.to_csv('results/episodes/study1.csv', index=False)
-    print('Study 1 (minutes)\n', e1.round(3).to_string())
-    P = pd.read_csv('results/study2/lso_predictions_composite.csv.gz', parse_dates=['ts']).sort_values(['site', 'ts']).reset_index(drop=True)
+    e1 = evaluate(P, models + rules1, ts, 1, 1, 15, None, P.day.nunique(), 15); e1.to_csv('results/episodes/study1.csv', index=False)
+    print('Study 1 (minutes; false-alarm time in min/day)\n', e1.round(3).to_string())
+    P = pd.read_csv('results/study2/lso_predictions_composite.csv.gz', parse_dates=['ts'])
+    B = pd.read_csv('results/baselines/preds_study2.csv.gz'); assert (B.ts.values == P.ts.astype(str).values).all()
+    rules2 = [c[:-5] for c in B.columns if c.endswith('_pred')]; P = pd.concat([P, B[[f'{r}_pred' for r in rules2]]], axis=1)
+    P = P.sort_values(['site', 'ts']).reset_index(drop=True)
     ts = ((P.ts - pd.Timestamp('1970-01-01')) // pd.Timedelta('1h')).values
     site_days = P.groupby('site').ts.apply(lambda s: s.dt.normalize().nunique()).sum()
-    e2 = evaluate(P, models, ts, 1, 60, 1, P.site.astype(str).values, site_days, 1); e2.to_csv('results/episodes/study2.csv', index=False)
-    print('Study 2 (hours; delay in minutes; false alarms per home-day)\n', e2.round(3).to_string())
+    e2 = evaluate(P, models + rules2, ts, 1, 60, 1, P.site.astype(str).values, site_days, 1); e2.to_csv('results/episodes/study2.csv', index=False)
+    print('Study 2 (hours; delay and false-alarm time in min per home-day)\n', e2.round(3).to_string())

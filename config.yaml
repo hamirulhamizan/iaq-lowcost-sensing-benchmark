@@ -12,6 +12,7 @@ protocols:
   chronological: {train_end: "2015-02-10 23:59", test_start: "2015-02-11 00:00", inner_cv: group_kfold, inner_folds: 3}
 tuning_metric: average_precision   # PR-AUC of the Poor-IAQ class: hyperparameters are chosen without reference to a cut-off
 threshold_tuning: true          # decision threshold chosen to maximise F1 on inner out-of-fold scores (training data only), same for every model
+alarm_budgets: [0.10]           # extra operating point: highest-recall threshold with <= 10% inner out-of-fold false-alarm rate
 svm_max_train: 20000            # kernel SVM fitted on a stratified sample of at most 20,000 training rows (all studies)
 bootstrap: {unit: calendar_day, n_resamples: 2000, ci: 0.95}
 models:

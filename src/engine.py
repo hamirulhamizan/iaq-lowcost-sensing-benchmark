@@ -34,8 +34,13 @@ def fit_select(cfg, name, X, y, groups=None, inner='group', folds=3, fixed=None)
     if name == 'SVM' and cap and len(y) > cap:
         idx = train_test_split(np.arange(len(y)), train_size=cap, stratify=y, random_state=cfg['seed'])[0]
         X, y = X[idx], y[idx]; groups = None if groups is None else groups[idx]
-    cv = list(GroupKFold(n_splits=folds).split(X, y, groups)) if inner == 'group' else \
-        list(StratifiedKFold(folds, shuffle=True, random_state=cfg['seed']).split(X, y))
+    if inner == 'time':  # prospective: train on earlier groups (days), validate on the next block of later days
+        ug = np.array(sorted(set(groups))); blocks = np.array_split(ug, folds + 1)
+        cv = [(np.flatnonzero(np.isin(groups, np.concatenate(blocks[:k + 1]))), np.flatnonzero(np.isin(groups, blocks[k + 1]))) for k in range(folds)]
+    elif inner == 'group':
+        cv = list(GroupKFold(n_splits=folds).split(X, y, groups))
+    else:
+        cv = list(StratifiedKFold(folds, shuffle=True, random_state=cfg['seed']).split(X, y))
     step = pipe.steps[-1][0]
     if fixed is not None:
         pipe.set_params(**{f'{step}__{k}': (tuple(v) if isinstance(v, list) else v) for k, v in fixed.items() if k != 'threshold'})
@@ -46,11 +51,21 @@ def fit_select(cfg, name, X, y, groups=None, inner='group', folds=3, fixed=None)
     else:
         params = {}
     method = 'predict_proba' if hasattr(pipe, 'predict_proba') else 'decision_function'
-    oof = cross_val_predict(clone(pipe), X, y, cv=cv, method=method, n_jobs=2)
-    oof = oof[:, 1] if oof.ndim == 2 else oof
-    thr = best_threshold(y, oof) if cfg['threshold_tuning'] else (0.5 if method == 'predict_proba' else 0.0)
+    if inner == 'time':  # validation blocks do not cover all rows: collect scores on validated rows only
+        vi = np.concatenate([v for _, v in cv]); oof = np.concatenate([_score(clone(pipe).fit(X[t], y[t]), X[v]) for t, v in cv]); yo = y[vi]
+    else:
+        oof = cross_val_predict(clone(pipe), X, y, cv=cv, method=method, n_jobs=2)
+        oof = oof[:, 1] if oof.ndim == 2 else oof; yo = y
+    thr = best_threshold(yo, oof) if cfg['threshold_tuning'] else (0.5 if method == 'predict_proba' else 0.0)
+    out = {**params, 'threshold': thr}
+    for b in cfg.get('alarm_budgets', []):  # highest-recall threshold whose out-of-fold false-alarm rate is <= b
+        out[f'thr_budget{int(b * 100)}'] = float(np.nextafter(np.quantile(oof[yo == 0], 1 - b), np.inf))
     est = pipe.fit(X, y)
-    return est, {**params, 'threshold': thr}
+    return est, out
+
+
+def _score(est, X):
+    return scores(est, X)[0]
 
 
 def block_bootstrap_f1(per, cfg):
@@ -60,23 +75,31 @@ def block_bootstrap_f1(per, cfg):
     return tuple(np.percentile(v, [2.5, 97.5]))
 
 
-def evaluate(cfg, df, name, feats, outer, block, inner='group', inner_group=None, folds=3, fixed=None):
+def evaluate(cfg, df, name, feats, outer, block, inner='group', inner_group=None, folds=3, fixed=None, fixed_per_fold=None):
     """outer: list of (train_idx, test_idx, tag). block: column used for per-block metrics and the bootstrap CI.
     Returns pooled metrics, per-block table, selected parameters per outer fold, and out-of-fold predictions/scores."""
     X = df[feats].values; y = df['poor'].values
     g = None if inner_group is None else df[inner_group].values.astype(str)
     pred = np.full(len(df), -1); pred05 = np.full(len(df), -1); sc = np.full(len(df), np.nan); fold_id = np.full(len(df), -1)
-    params, ap_fold = [], []
+    params, ap_fold, budget_pred = [], [], {}
     for k, (tr, te, tag) in enumerate(outer):
-        est, bp = fit_select(cfg, name, X[tr], y[tr], None if g is None else g[tr], inner, folds, fixed)
+        fx = fixed_per_fold[k] if fixed_per_fold is not None else fixed
+        est, bp = fit_select(cfg, name, X[tr], y[tr], None if g is None else g[tr], inner, folds, fx)
         s, kind = scores(est, X[te])
+        for key in [q for q in bp if q.startswith('thr_budget')]:
+            budget_pred.setdefault(key, np.full(len(df), -1))[te] = (s >= bp[key]).astype(int)
         pred[te] = (s >= bp['threshold']).astype(int); pred05[te] = est.predict(X[te]); sc[te] = s; fold_id[te] = k
         if y[te].sum() > 0: ap_fold.append(average_precision_score(y[te], s))
         params.append({'fold': tag, **bp})
     m = pred >= 0
     pooled = metrics(y[m], pred[m])
     d = metrics(y[m], pred05[m]); pooled.update(f1_default=d['f1'], mcc_default=d['mcc'], recall_default=d['recall'])
-    pooled['pr_auc'] = float(np.mean(ap_fold)); pooled['prevalence_test'] = float(y[m].mean())
+    pooled['pr_auc'] = float(np.mean(ap_fold)) if ap_fold else np.nan; pooled['prevalence_test'] = float(y[m].mean())
+    pooled['alarm_time'] = float(pred[m].mean())
+    for key, bpred in budget_pred.items():
+        b = key.replace('thr_', ''); mb = metrics(y[m], bpred[m])
+        pooled.update({f'{b}_recall': mb['recall'], f'{b}_precision': mb['precision'], f'{b}_f1': mb['f1'],
+                       f'{b}_fpr': mb['fp'] / (mb['fp'] + mb['tn']), f'{b}_alarm_time': float(bpred[m].mean())})
     sub = df.loc[m, [block]].assign(y=y[m], p=pred[m], s=sc[m])
     rows = []
     for b, s in sub.groupby(block):
@@ -87,4 +110,4 @@ def evaluate(cfg, df, name, feats, outer, block, inner='group', inner_group=None
     per = pd.DataFrame(rows)
     if len(outer) > 1 or len(per) > 1:
         pooled['f1_ci_low'], pooled['f1_ci_high'] = block_bootstrap_f1(per, cfg)
-    return pooled, per, params, dict(pred=pred, pred_default=pred05, score=sc, fold=fold_id)
+    return pooled, per, params, dict(pred=pred, pred_default=pred05, score=sc, fold=fold_id, **{f'pred_{k[4:]}': v for k, v in budget_pred.items()})

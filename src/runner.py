@@ -21,7 +21,7 @@ def cached(study, key, fn):
     t = time.time(); out = fn(); out['seconds'] = round(time.time() - t, 1)
     pickle.dump(out, open(f + '.tmp', 'wb')); os.replace(f + '.tmp', f)
     p = out['pooled']
-    print(f"{key:60s} F1={p['f1']:.3f} MCC={p['mcc']:.3f} PR-AUC={p['pr_auc']:.3f} F1@default={p['f1_default']:.3f} ({out['seconds']:.0f}s)", flush=True)
+    print(f"{key:60s} F1={p['f1']:.3f} MCC={p['mcc']:.3f} PR-AUC={p.get('pr_auc', float('nan')):.3f} F1@default={p['f1_default']:.3f} ({out['seconds']:.0f}s)", flush=True)
     return out
 
 

@@ -15,11 +15,11 @@ order = summ[summ.protocol == 'leave_one_day_out'].sort_values('f1', ascending=F
 # ---- Fig 1: framework
 steps = ["Two public datasets\nStudy 1: office room, 17 days, 1-min records\nStudy 2: 95 home offices, 53 days, hourly records",
          "Pre-processing\nmerging, de-duplication, gap and validity checks;\nz-score scaling fitted on training folds only",
-         "Labelling (Poor if any limit is exceeded)\nStudy 1: CO$_2$ > 1000 ppm (ICOP-IAQ 2010)\nStudy 2: CO$_2$ > 1000 ppm, PM2.5 > 15 µg/m$^3$ (WHO 2021), TVOC > 3 ppm (ICOP-IAQ 2010)",
+         "Exceedance labels (positive if any limit is exceeded)\nStudy 1: CO$_2$ > 1000 ppm (ICOP-IAQ 2010)\nStudy 2: CO$_2$ > 1000 ppm, PM2.5 > 15 µg/m$^3$ (WHO 2021), TVOC > 3 ppm (ICOP-IAQ 2010)",
          "Inputs: temperature, RH, and light (Study 1) or sound level (Study 2)\n(pollutant concentrations never used as inputs)",
-         "12 classifiers, identical treatment\nLR · LDA · NB · KNN · DT · RF · ET · AdaBoost · GB · HGB · SVM · MLP\ngrid search on PR-AUC, then F1-optimal threshold on inner out-of-fold scores",
-         "Validation\nrandom 70/30 vs leave-one-day-out (Study 1) or leave-sites-out (Study 2)\nand chronological hold-out",
-         "Evaluation\nF1, MCC, PR-AUC, block-bootstrap 95% CI; Friedman–Nemenyi tests;\nepisode-level detection; per-day, per-occupancy and per-pollutant analyses; ablations"]
+         "12 classifiers (identical tuning) and simple-rule baselines\nLR · LDA · NB · KNN · DT · RF · ET · AdaBoost · GB · HGB · SVM · MLP\ngrid search on PR-AUC, then F1-optimal threshold on inner out-of-fold scores",
+         "Validation: random 70/30; unseen days (Study 1) or unseen homes (Study 2);\nfuture period; buffered and forward-chaining (prospective) sensitivity analyses",
+         "Evaluation\nF1, MCC, PR-AUC, bootstrap CIs, paired differences, Friedman tests;\nalarm burden and episode matching; occupancy and pollutant breakdowns; ablations"]
 fig, ax = plt.subplots(figsize=(5.6, 7.0)); ax.axis('off'); n = len(steps); h = 0.108; gap = (1 - n * h) / (n - 1)
 for i, s in enumerate(steps):
     y = 1 - i * (h + gap) - h
@@ -50,7 +50,7 @@ for k, (p, lab, col) in enumerate(P):
     ax.bar(x + (k - 1) * w, v.f1, w, color=col, label=lab)
     if p == 'leave_one_day_out':
         ax.errorbar(x + (k - 1) * w, v.f1, yerr=[v.f1 - v.f1_ci_low, v.f1_ci_high - v.f1], fmt='none', ecolor='black', elinewidth=0.6, capsize=1.5)
-ax.set_xticks(x); ax.set_xticklabels(order, fontsize=7.5); ax.set_ylabel('F1-score (Poor IAQ)'); ax.set_ylim(0, 1.08)
+ax.set_xticks(x); ax.set_xticklabels(order, fontsize=7.5); ax.set_ylabel('F1-score (exceedance class)'); ax.set_ylim(0, 1.08)
 ax.legend(fontsize=7, ncol=3, loc='upper center', bbox_to_anchor=(0.5, 1.15), frameon=False); ax.grid(axis='y', alpha=0.3, lw=0.4)
 fig.tight_layout(); fig.savefig('figures/fig3_protocols.png', dpi=300); plt.close()
 
