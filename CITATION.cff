@@ -10,7 +10,7 @@ authors:
 repository-code: "https://github.com/hamirulhamizan/iaq-lowcost-sensing-benchmark"
 preferred-citation:
   type: article
-  title: "[Final article title]"
+  title: "Indoor Air Quality Exceedance Classification from Low-Cost Ambient Sensors: A Leakage-Aware Evaluation of Twelve Machine Learning Classifiers and Simple Rules"
   journal: "Journal of Soft Computing and Data Mining"
   year: 2026
   authors:

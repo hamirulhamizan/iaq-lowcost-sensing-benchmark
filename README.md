@@ -1,7 +1,7 @@
 # Leakage-aware classification of indoor air quality from low-cost sensors
 
 Code, configuration and results for the article
-**"Can Low-Cost Ambient Sensors Screen Indoor Air Quality? A Leakage-Aware Benchmark of Twelve Machine Learning Classifiers on CO₂-Based and Multi-Pollutant Labels"**, submitted to the *Journal of Soft Computing and Data Mining* (2026).
+**"Indoor Air Quality Exceedance Classification from Low-Cost Ambient Sensors: A Leakage-Aware Evaluation of Twelve Machine Learning Classifiers and Simple Rules"**, submitted to the *Journal of Soft Computing and Data Mining* (2026).
 
 The study tests whether indoor air quality (IAQ) status can be classified from **low-cost temperature, relative humidity
 and light or sound sensors only**, and how much the reported performance depends on the validation protocol.
