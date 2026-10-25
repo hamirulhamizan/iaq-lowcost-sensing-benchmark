@@ -14,6 +14,10 @@ python src/run_multisite.py leave_sites_out PM2.5
 python src/run_multisite_ablation.py
 # Supplementary: high-pollution datasets (requires data/dalton/dalton_hourly.csv, see src/data_prep/README.md)
 python src/run_sensitivity.py
+# Reviewer-requested analyses: temporal separation, false-alarm budget, simple-rule baselines
+python src/run_temporal.py
+python src/run_budget.py
+python src/run_baselines.py
 # Statistics, episode-level evaluation, figures and tables
 python src/run_stats.py
 python src/run_episodes.py

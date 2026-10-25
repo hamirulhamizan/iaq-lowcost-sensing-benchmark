@@ -20,7 +20,10 @@ and light or sound sensors only**, and how much the reported performance depends
 | `src/engine.py` | Identical tuning for every model: PR-AUC grid search, inner-fold F1-optimal threshold, block bootstrap |
 | `src/runner.py` | Checkpointing of every run (resumable) |
 | `src/run_stats.py` | Friedman, Nemenyi and Holm-corrected Wilcoxon tests |
-| `src/run_episodes.py` | Episode-level detection, delay and false-alarm episodes |
+| `src/run_episodes.py` | Episode matching (active at onset / newly triggered), event precision, time in alarm, false-alarm time |
+| `src/run_baselines.py` | Simple-rule baselines (always alarm, light / RH / sound threshold, working hours) under the same outer splits |
+| `src/run_temporal.py` | Buffered leave-one-day-out, forward chaining with chronological inner folds, unseen homes in a later period |
+| `src/run_budget.py` | Recall at a 10% false-alarm budget set on training data |
 | `src/run_main.py` | 12 classifiers × 3 validation protocols |
 | `src/run_ablation.py` | Feature ablation and CO₂-threshold sensitivity (three best models) |
 | `src/run_multisite.py` | Study 2: 12 classifiers × random / leave-sites-out / chronological, composite and single-pollutant labels |
@@ -35,7 +38,7 @@ and light or sound sensors only**, and how much the reported performance depends
 
 ```bash
 pip install -r requirements.txt     # Python 3.13; exact versions pinned
-./run_all.sh                        # about 6 h on a 2-core CPU; resumes after interruption
+./run_all.sh                        # about 8 h on a 2-core CPU; resumes after interruption
 ```
 
 All randomness is controlled by `seed: 42` in `config.yaml`. Standardisation and hyperparameter
