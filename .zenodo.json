@@ -1,44 +1,19 @@
 {
-  "title": "Leakage-aware classification of indoor air quality from low-cost sensors: code, configuration and results",
-  "upload_type": "software",
-  "description": "Code, configuration file (config.yaml), data and results for a leakage-aware benchmark of twelve classifiers that infer indoor air quality status (CO2-based and multi-pollutant: CO2, PM2.5, TVOC) from low-cost temperature, humidity, light and sound sensors, under random, leave-one-day-out, leave-sites-out and chronological validation. Datasets: Occupancy Detection (Candanedo & Feldheim, 2016), work-from-home IEQ (Manu & Rysanek, 2024), Lovric et al. (2025); DALTON (Karmakar et al., 2024) is rebuilt by scripts. Source: https://github.com/hamirulhamizan/iaq-lowcost-sensing-benchmark",
-  "creators": [
-    {
-      "name": "[Surname], [Given name]",
-      "affiliation": "[Institution, Malaysia]",
-      "orcid": "[0000-0000-0000-0000]"
-    }
-  ],
-  "license": "MIT",
-  "keywords": [
-    "indoor air quality",
-    "CO2",
-    "PM2.5",
-    "low-cost sensors",
-    "machine learning",
-    "data leakage",
-    "cross-validation"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "10.24432/C5X01N",
-      "relation": "isDerivedFrom",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.17632/7ggv5vhpwb.1",
-      "relation": "isDerivedFrom",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.5281/zenodo.14763137",
-      "relation": "isDerivedFrom",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.1016/j.enbuild.2015.11.071",
-      "relation": "references",
-      "scheme": "doi"
-    }
-  ]
+"title": "IAQ exceedance classification from low-cost ambient sensors: code, configuration and results for a leakage-aware benchmark",
+"upload_type": "software",
+"version": "1.0.0",
+"description": "Code, configuration file (config.yaml), selected hyperparameters and thresholds for every fold, per-day and per-home metrics, and all out-of-sample predictions for a leakage-aware evaluation of twelve machine learning classifiers and simple rules (light, relative-humidity, sound-level and working-hours thresholds) that flag indoor air quality exceedances from temperature, relative humidity and light or sound signals. Study 1: CO2 > 1000 ppm (ICOP-IAQ 2010) in an office room (Occupancy Detection dataset, Candanedo & Feldheim, 2016). Study 2: CO2, PM2.5 or TVOC exceedances in 95 home offices (Manu & Rysanek, 2024). Validation: random, leave-one-day-out, leave-sites-out, chronological, buffered leave-one-day-out, forward-chaining and unseen-homes-future-period protocols, with alarm-burden and episode analyses. Supplementary analysis: DALTON (Karmakar et al., 2024; rebuilt by scripts) and Lovric et al. (2025). One command (run_all.sh) regenerates every table and figure. Source: https://github.com/hamirulhamizan/iaq-lowcost-sensing-benchmark",
+"creators": [
+{"name": "hamirulhamizan"}
+],
+"license": "MIT",
+"keywords": ["indoor air quality", "low-cost sensors", "machine learning", "data leakage", "imbalanced classification", "CO2", "PM2.5", "cross-validation"],
+"related_identifiers": [
+{"identifier": "10.24432/C5X01N", "relation": "isDerivedFrom", "scheme": "doi"},
+{"identifier": "10.17632/7ggv5vhpwb.1", "relation": "isDerivedFrom", "scheme": "doi"},
+{"identifier": "10.5281/zenodo.14763137", "relation": "isDerivedFrom", "scheme": "doi"},
+{"identifier": "https://github.com/prasenjit52282/dalton-dataset", "relation": "isDerivedFrom", "scheme": "url"},
+{"identifier": "10.1016/j.enbuild.2015.11.071", "relation": "references", "scheme": "doi"},
+{"identifier": "10.1016/j.buildenv.2024.112222", "relation": "references", "scheme": "doi"}
+]
 }
