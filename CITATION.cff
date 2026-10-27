@@ -1,12 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the article below."
-title: "Leakage-aware classification of indoor air quality from low-cost sensors: code and results"
+title: "IAQ exceedance classification from low-cost ambient sensors: code, configuration and results for a leakage-aware benchmark"
 type: software
+version: "1.0.0"
 license: MIT
 authors:
-  - family-names: "[Surname]"
-    given-names: "[Given name]"
-    affiliation: "[Institution, Malaysia]"
+  - alias: "hamirulhamizan"
 repository-code: "https://github.com/hamirulhamizan/iaq-lowcost-sensing-benchmark"
 preferred-citation:
   type: article
@@ -14,5 +13,4 @@ preferred-citation:
   journal: "Journal of Soft Computing and Data Mining"
   year: 2026
   authors:
-    - family-names: "[Surname]"
-      given-names: "[Given name]"
+    - alias: "hamirulhamizan"
